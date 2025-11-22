@@ -10,13 +10,14 @@ import { ShopPage } from './components/generated/ShopPage';
 import { CartPage, CartItem } from './components/generated/CartPage';
 import { CheckoutPage } from './components/generated/CheckoutPage';
 import { ListingUploadPage } from './components/generated/ListingUploadPage';
+import { UserProfilePage } from './components/generated/UserProfilePage';
 
 let theme: Theme = 'light';
 // only use 'centered' container for standalone components, never for full page apps or websites.
 let container: Container = 'centered';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'schedule' | 'map' | 'scan' | 'recycle' | 'donations' | 'shop' | 'cart' | 'checkout' | 'listing'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'schedule' | 'map' | 'scan' | 'recycle' | 'donations' | 'shop' | 'cart' | 'checkout' | 'listing' | 'profile'>('home');
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   function setTheme(theme: Theme) {
@@ -77,6 +78,14 @@ function App() {
     if (currentPage === 'listing') {
       return <ListingUploadPage onBack={() => setCurrentPage('home')} onComplete={() => setCurrentPage('home')} />;
     }
+    if (currentPage === 'profile') {
+      return <UserProfilePage 
+        onNavigateToHome={() => setCurrentPage('home')}
+        onNavigateToMap={() => setCurrentPage('map')}
+        onNavigateToScan={() => setCurrentPage('scan')}
+        onNavigateToShop={() => setCurrentPage('shop')}
+      />;
+    }
     return <BottomNavbar 
       onNavigateToSchedule={() => setCurrentPage('schedule')}
       onNavigateToMap={() => setCurrentPage('map')}
@@ -85,6 +94,7 @@ function App() {
       onNavigateToShop={() => setCurrentPage('shop')}
       onNavigateToListing={() => setCurrentPage('listing')}
       onNavigateToCart={() => setCurrentPage('cart')}
+      onNavigateToProfile={() => setCurrentPage('profile')}
     />; // %EXPORT_STATEMENT%
   }, [currentPage, cartItems]);
 
