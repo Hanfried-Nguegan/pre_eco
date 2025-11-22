@@ -124,29 +124,29 @@ export const MapsPage = ({
 
   // If navigating, show NavigationWaypoint component
   if (isNavigating && navigationDestination) {
-    return <NavigationWaypoint destination={navigationDestination} onClose={handleCloseNavigation} data-magicpath-id="0" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx" />;
+    return <NavigationWaypoint destination={navigationDestination} onClose={handleCloseNavigation} />;
   }
-  return <div className="relative w-full h-full min-h-screen bg-zinc-50 flex flex-col font-sans overflow-hidden" data-magicpath-id="1" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
+  return <div className="relative w-full h-full min-h-screen bg-zinc-50 flex flex-col font-sans overflow-hidden">
       {/* Map Container */}
-      <div className="relative flex-1 w-full h-full" data-magicpath-id="2" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
+      <div className="relative flex-1 w-full h-full">
         {/* Simple SVG Map Background */}
-        <div ref={mapRef} className="absolute inset-0 bg-gradient-to-br from-zinc-100 to-zinc-200 overflow-hidden" data-magicpath-id="3" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
+        <div ref={mapRef} className="absolute inset-0 bg-gradient-to-br from-zinc-100 to-zinc-200 overflow-hidden">
           {/* Map Grid Pattern */}
-          <svg className="absolute inset-0 w-full h-full opacity-20" data-magicpath-id="4" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
-            <defs data-magicpath-id="5" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
-              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse" data-magicpath-id="6" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#005C4B" strokeWidth="0.5" data-magicpath-id="7" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx" />
+          <svg className="absolute inset-0 w-full h-full opacity-20">
+            <defs>
+              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#005C4B" strokeWidth="0.5" />
               </pattern>
             </defs>
-            <rect width="100%" height="100%" fill="url(#grid)" data-magicpath-id="8" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx" />
+            <rect width="100%" height="100%" fill="url(#grid)" />
           </svg>
 
           {/* Decorative Map Roads */}
-          <svg className="absolute inset-0 w-full h-full" data-magicpath-id="9" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
-            <path d="M 0 200 Q 200 180 400 200 T 800 200" stroke="#9ca3af" strokeWidth="8" fill="none" opacity="0.3" data-magicpath-id="10" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx" />
-            <path d="M 200 0 Q 220 200 240 400 T 200 800" stroke="#9ca3af" strokeWidth="8" fill="none" opacity="0.3" data-magicpath-id="11" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx" />
-            <path d="M 100 100 L 700 500" stroke="#9ca3af" strokeWidth="6" fill="none" opacity="0.2" data-magicpath-id="12" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx" />
-            <path d="M 600 100 Q 400 300 300 600" stroke="#9ca3af" strokeWidth="6" fill="none" opacity="0.2" data-magicpath-id="13" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx" />
+          <svg className="absolute inset-0 w-full h-full">
+            <path d="M 0 200 Q 200 180 400 200 T 800 200" stroke="#9ca3af" strokeWidth="8" fill="none" opacity="0.3" />
+            <path d="M 200 0 Q 220 200 240 400 T 200 800" stroke="#9ca3af" strokeWidth="8" fill="none" opacity="0.3" />
+            <path d="M 100 100 L 700 500" stroke="#9ca3af" strokeWidth="6" fill="none" opacity="0.2" />
+            <path d="M 600 100 Q 400 300 300 600" stroke="#9ca3af" strokeWidth="6" fill="none" opacity="0.2" />
           </svg>
 
           {/* Markers */}
@@ -172,7 +172,7 @@ export const MapsPage = ({
             left: `${randomX}%`,
             top: `${randomY}%`,
             transform: 'translate(-50%, -50%)'
-          }} data-magicpath-id="14" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
+          }}>
                 {/* Pulse animation */}
                 <motion.div className="absolute inset-0 rounded-full bg-purple-400 pointer-events-none" initial={false} animate={{
               scale: [1, 2, 1],
@@ -186,18 +186,18 @@ export const MapsPage = ({
               height: '48px',
               left: '-12px',
               top: '-12px'
-            }} data-magicpath-id="15" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx" />
+            }} />
                 
                 {/* Marker Pin */}
-                <div className="relative" data-magicpath-id="16" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
-                  <svg width="24" height="32" viewBox="0 0 24 32" className="drop-shadow-lg" data-magicpath-id="17" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
-                    <path d="M12 0C5.4 0 0 5.4 0 12c0 8 12 20 12 20s12-12 12-20c0-6.6-5.4-12-12-12z" fill="#8b5cf6" className="group-hover:fill-[#005C4B] transition-colors duration-200" data-magicpath-id="18" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx" />
-                    <circle cx="12" cy="12" r="6" fill="white" data-magicpath-id="19" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx" />
-                    <circle cx="12" cy="12" r="3" fill="#8b5cf6" className="group-hover:fill-[#005C4B] transition-colors duration-200" data-magicpath-id="20" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx" />
+                <div className="relative">
+                  <svg width="24" height="32" viewBox="0 0 24 32" className="drop-shadow-lg">
+                    <path d="M12 0C5.4 0 0 5.4 0 12c0 8 12 20 12 20s12-12 12-20c0-6.6-5.4-12-12-12z" fill="#8b5cf6" className="group-hover:fill-[#005C4B] transition-colors duration-200" />
+                    <circle cx="12" cy="12" r="6" fill="white" />
+                    <circle cx="12" cy="12" r="3" fill="#8b5cf6" className="group-hover:fill-[#005C4B] transition-colors duration-200" />
                   </svg>
                   
                   {/* Badge for number of types */}
-                  <div className="absolute -top-2 -right-2 bg-[#DDF247] text-[#2A1805] text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center shadow-md" data-magicpath-id="21" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
+                  <div className="absolute -top-2 -right-2 bg-[#DDF247] text-[#2A1805] text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center shadow-md">
                   </div>
                 </div>
               </motion.button>;
@@ -205,24 +205,24 @@ export const MapsPage = ({
         </div>
 
         {/* Search Bar */}
-        <div className="absolute top-6 left-6 right-6 z-20" data-magicpath-id="22" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
-          <div className="bg-white rounded-[2rem] shadow-lg flex items-center px-5 py-4 gap-3 max-w-2xl mx-auto" data-magicpath-id="23" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
-            <Search className="text-zinc-400" size={20} data-magicpath-id="24" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx" />
-            <input type="text" placeholder="Enter recycle center or bins" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} className="flex-1 bg-transparent outline-none text-zinc-800 placeholder:text-zinc-400 text-sm" data-magicpath-id="25" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx" />
-            <button className="p-2 hover:bg-zinc-100 rounded-xl transition-colors" data-magicpath-id="26" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
-              <SlidersHorizontal className="text-zinc-600" size={20} data-magicpath-id="27" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx" />
+        <div className="absolute top-6 left-6 right-6 z-20">
+          <div className="bg-white rounded-[2rem] shadow-lg flex items-center px-5 py-4 gap-3 max-w-2xl mx-auto">
+            <Search className="text-zinc-400" size={20} />
+            <input type="text" placeholder="Enter recycle center or bins" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} className="flex-1 bg-transparent outline-none text-zinc-800 placeholder:text-zinc-400 text-sm" />
+            <button className="p-2 hover:bg-zinc-100 rounded-xl transition-colors">
+              <SlidersHorizontal className="text-zinc-600" size={20} />
             </button>
           </div>
         </div>
 
         {/* Filter Pills */}
-        <div className="absolute top-24 left-6 right-6 z-20" data-magicpath-id="28" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
-          <div className="flex gap-2 overflow-x-auto scrollbar-hide max-w-2xl mx-auto pb-2" data-magicpath-id="29" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
+        <div className="absolute top-24 left-6 right-6 z-20">
+          <div className="flex gap-2 overflow-x-auto scrollbar-hide max-w-2xl mx-auto pb-2">
             {recyclingFilters.map(filter => {
             const isActive = activeFilters.includes(filter);
             return <motion.button key={filter} onClick={() => toggleFilter(filter)} className={cn("px-5 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap transition-all duration-300 shadow-md", isActive ? "bg-[#005C4B] text-white" : "bg-white text-zinc-700 hover:bg-zinc-50")} whileTap={{
               scale: 0.95
-            }} data-magicpath-id="30" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
+            }}>
                   {filter}
                 </motion.button>;
           })}
@@ -230,7 +230,7 @@ export const MapsPage = ({
         </div>
 
         {/* Selected Marker Info Card */}
-        <AnimatePresence data-magicpath-id="31" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
+        <AnimatePresence>
           {selectedMarker && <motion.div initial={{
           y: 100,
           opacity: 0
@@ -244,46 +244,46 @@ export const MapsPage = ({
           type: 'spring',
           stiffness: 300,
           damping: 30
-        }} className="absolute bottom-32 left-6 right-6 z-30 max-w-md mx-auto" data-magicpath-id="32" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
-              <div className="bg-white rounded-[2rem] p-6 shadow-xl" data-magicpath-id="33" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
+        }} className="absolute bottom-32 left-6 right-6 z-30 max-w-md mx-auto">
+              <div className="bg-white rounded-[2rem] p-6 shadow-xl">
                 {/* Close button */}
-                <button onClick={() => setSelectedMarker(null)} className="absolute top-4 right-4 p-2 hover:bg-zinc-100 rounded-full transition-colors" data-magicpath-id="34" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-zinc-600" data-magicpath-id="35" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
-                    <path d="M2 2L14 14M14 2L2 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" data-magicpath-id="36" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx" />
+                <button onClick={() => setSelectedMarker(null)} className="absolute top-4 right-4 p-2 hover:bg-zinc-100 rounded-full transition-colors">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-zinc-600">
+                    <path d="M2 2L14 14M14 2L2 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                   </svg>
                 </button>
 
                 {/* Location Icon */}
-                <div className="flex items-start gap-4 mb-4" data-magicpath-id="37" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
-                  <div className="w-12 h-12 bg-purple-100 rounded-2xl flex items-center justify-center shrink-0" data-magicpath-id="38" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
-                    <MapPin className="text-purple-600" size={24} data-magicpath-id="39" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx" />
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-12 h-12 bg-purple-100 rounded-2xl flex items-center justify-center shrink-0">
+                    <MapPin className="text-purple-600" size={24} />
                   </div>
-                  <div className="flex-1" data-magicpath-id="40" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
-                    <h3 className="text-lg font-semibold text-zinc-800 mb-1" data-magicpath-id="41" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold text-zinc-800 mb-1">
                       {selectedMarker.name}
                     </h3>
-                    <p className="text-sm text-zinc-500 flex items-center gap-1" data-magicpath-id="42" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
-                      <Navigation size={14} data-magicpath-id="43" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx" />
+                    <p className="text-sm text-zinc-500 flex items-center gap-1">
+                      <Navigation size={14} />
                       {selectedMarker.distance} from you
                     </p>
                   </div>
                 </div>
 
                 {/* Recycling Types */}
-                <div className="flex gap-2 flex-wrap mb-4" data-magicpath-id="44" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
-                  {selectedMarker.type.map(type => <span key={type} className="px-3 py-1 bg-[#DDF247]/30 text-[#005C4B] text-xs font-semibold rounded-full" data-magicpath-id="45" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
+                <div className="flex gap-2 flex-wrap mb-4">
+                  {selectedMarker.type.map(type => <span key={type} className="px-3 py-1 bg-[#DDF247]/30 text-[#005C4B] text-xs font-semibold rounded-full">
                       {type}
                     </span>)}
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-3" data-magicpath-id="46" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
-                  <button onClick={() => setIsDetailModalOpen(true)} className="flex-1 py-3 px-4 bg-zinc-100 text-zinc-700 rounded-[1.5rem] font-semibold text-sm hover:bg-zinc-200 transition-colors flex items-center justify-center gap-2" data-magicpath-id="47" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
-                    <Info size={18} data-magicpath-id="48" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx" />
+                <div className="flex gap-3">
+                  <button onClick={() => setIsDetailModalOpen(true)} className="flex-1 py-3 px-4 bg-zinc-100 text-zinc-700 rounded-[1.5rem] font-semibold text-sm hover:bg-zinc-200 transition-colors flex items-center justify-center gap-2">
+                    <Info size={18} />
                     More info
                   </button>
-                  <button onClick={() => handleStartNavigation(selectedMarker)} className="flex-1 py-3 px-4 bg-[#2A1805] text-white rounded-[1.5rem] font-semibold text-sm hover:bg-[#1a1005] transition-colors flex items-center justify-center gap-2" data-magicpath-id="49" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
-                    <Navigation size={18} data-magicpath-id="50" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx" />
+                  <button onClick={() => handleStartNavigation(selectedMarker)} className="flex-1 py-3 px-4 bg-[#2A1805] text-white rounded-[1.5rem] font-semibold text-sm hover:bg-[#1a1005] transition-colors flex items-center justify-center gap-2">
+                    <Navigation size={18} />
                     Get Direction
                   </button>
                 </div>
@@ -293,8 +293,8 @@ export const MapsPage = ({
       </div>
 
       {/* Floating Bottom Navbar Container */}
-      <div className="absolute bottom-8 left-0 right-0 px-6 z-50 flex justify-center pointer-events-none" data-magicpath-id="51" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
-        <nav className="bg-white p-2.5 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.12)] flex items-center gap-2 pointer-events-auto max-w-md w-full justify-between" data-magicpath-id="52" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
+      <div className="absolute bottom-8 left-0 right-0 px-6 z-50 flex justify-center pointer-events-none">
+        <nav className="bg-white p-2.5 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.12)] flex items-center gap-2 pointer-events-auto max-w-md w-full justify-between">
           {navItems.map(item => {
           const isActive = activeTab === item.id;
           return <motion.button key={item.id} onClick={() => {
@@ -309,9 +309,9 @@ export const MapsPage = ({
             type: "spring",
             stiffness: 500,
             damping: 35
-          }} data-magicpath-id="53" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
+          }}>
                 {/* Active State Content */}
-                <AnimatePresence mode="wait" data-magicpath-id="54" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
+                <AnimatePresence mode="wait">
                   {isActive && <motion.div className="flex items-center gap-3 overflow-hidden whitespace-nowrap" initial={{
                 opacity: 0,
                 width: 0
@@ -324,8 +324,8 @@ export const MapsPage = ({
               }} transition={{
                 duration: 0.3,
                 delay: 0.1
-              }} data-magicpath-id="55" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
-                      <item.icon size={20} className="text-white shrink-0" strokeWidth={2.5} data-magicpath-id="56" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx" />
+              }}>
+                      <item.icon size={20} className="text-white shrink-0" strokeWidth={2.5} />
                       <motion.span className="text-white font-semibold text-sm tracking-wide" initial={{
                   opacity: 0,
                   x: -10
@@ -334,7 +334,7 @@ export const MapsPage = ({
                   x: 0
                 }} transition={{
                   delay: 0.15
-                }} data-magicpath-id="57" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
+                }}>
                         {item.label}
                       </motion.span>
                     </motion.div>}
@@ -352,8 +352,8 @@ export const MapsPage = ({
               scale: 0
             }} transition={{
               duration: 0.2
-            }} data-magicpath-id="58" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx">
-                    <item.icon size={24} className="text-zinc-400" strokeWidth={2} data-magicpath-id="59" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx" />
+            }}>
+                    <item.icon size={24} className="text-zinc-400" strokeWidth={2} />
                   </motion.div>}
               </motion.button>;
         })}
@@ -361,6 +361,6 @@ export const MapsPage = ({
       </div>
 
       {/* Detail Modal */}
-      {selectedMarker && <RecyclingCenterDetailModal markerData={selectedMarker} isOpen={isDetailModalOpen} onClose={() => setIsDetailModalOpen(false)} onStartNavigation={handleStartNavigation} data-magicpath-id="60" data-magicpath-path="MapsPage_dupe_9_dupe_2.tsx" />}
+      {selectedMarker && <RecyclingCenterDetailModal markerData={selectedMarker} isOpen={isDetailModalOpen} onClose={() => setIsDetailModalOpen(false)} onStartNavigation={handleStartNavigation} />}
     </div>;
 };

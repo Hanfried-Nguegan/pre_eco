@@ -28,11 +28,11 @@ const exampleListing: ListingDetail = {
 };
 export const ListingDetailExample = () => {
   const [isOpen, setIsOpen] = useState(false);
-  return <div className="min-h-screen bg-zinc-50 flex items-center justify-center p-6" data-magicpath-id="0" data-magicpath-path="ListingDetailExample_dupe_1_dupe_1.tsx">
-      <button onClick={() => setIsOpen(true)} className="px-8 py-4 bg-gradient-to-r from-[#DDF247] to-[#B8E635] text-[#2A1805] rounded-[2rem] font-semibold text-lg hover:shadow-lg transition-all" data-magicpath-id="1" data-magicpath-path="ListingDetailExample_dupe_1_dupe_1.tsx">
+  return <div className="min-h-screen bg-zinc-50 flex items-center justify-center p-6">
+      <button onClick={() => setIsOpen(true)} className="px-8 py-4 bg-gradient-to-r from-[#DDF247] to-[#B8E635] text-[#2A1805] rounded-[2rem] font-semibold text-lg hover:shadow-lg transition-all">
         View Listing Details
       </button>
 
-      <ListingDetailCard listing={exampleListing} isOpen={isOpen} onClose={() => setIsOpen(false)} onEdit={() => console.log('Edit clicked')} onDelete={() => console.log('Delete clicked')} onShare={() => console.log('Share clicked')} isOwner={true} data-magicpath-id="2" data-magicpath-path="ListingDetailExample_dupe_1_dupe_1.tsx" />
+      <ListingDetailCard listing={exampleListing} isOpen={isOpen} onClose={() => setIsOpen(false)} onEdit={() => console.log('Edit clicked')} onDelete={() => console.log('Delete clicked')} onShare={() => console.log('Share clicked')} isOwner={true} />
     </div>;
 };

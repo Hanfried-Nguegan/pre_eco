@@ -191,25 +191,25 @@ export const UserProfilePage = ({
   const getTierIcon = (tier: LoyaltyTier) => {
     switch (tier) {
       case 'Platinum':
-        return <Crown size={24} className="text-white" data-magicpath-id="0" data-magicpath-path="UserProfilePage_dupe_1.tsx" />;
+        return <Crown size={24} className="text-white" />;
       default:
-        return <Award size={24} className="text-white" data-magicpath-id="1" data-magicpath-path="UserProfilePage_dupe_1.tsx" />;
+        return <Award size={24} className="text-white" />;
     }
   };
-  return <div className="relative w-full h-full min-h-screen bg-zinc-50 flex flex-col font-sans overflow-hidden" data-magicpath-id="2" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+  return <div className="relative w-full h-full min-h-screen bg-zinc-50 flex flex-col font-sans overflow-hidden">
       {/* Header with Avatar */}
-      <header className="bg-gradient-to-br from-blue-400 to-blue-500 px-6 pt-8 pb-20 shadow-sm relative z-20 overflow-hidden" data-magicpath-id="3" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+      <header className="bg-gradient-to-br from-blue-400 to-blue-500 px-6 pt-8 pb-20 shadow-sm relative z-20 overflow-hidden">
         {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10" data-magicpath-id="4" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-          <svg className="w-full h-full" data-magicpath-id="5" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-            <pattern id="dots-profile" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse" data-magicpath-id="6" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-              <circle cx="20" cy="20" r="2" fill="white" data-magicpath-id="7" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
+        <div className="absolute inset-0 opacity-10">
+          <svg className="w-full h-full">
+            <pattern id="dots-profile" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+              <circle cx="20" cy="20" r="2" fill="white" />
             </pattern>
-            <rect width="100%" height="100%" fill="url(#dots-profile)" data-magicpath-id="8" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
+            <rect width="100%" height="100%" fill="url(#dots-profile)" />
           </svg>
         </div>
 
-        <div className="relative z-10 flex items-center gap-4" data-magicpath-id="9" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+        <div className="relative z-10 flex items-center gap-4">
           {/* Avatar */}
           <motion.div initial={{
           scale: 0
@@ -218,30 +218,30 @@ export const UserProfilePage = ({
         }} transition={{
           type: 'spring',
           stiffness: 200
-        }} className="w-20 h-20 bg-white rounded-[2rem] flex items-center justify-center text-4xl shadow-lg" data-magicpath-id="10" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+        }} className="w-20 h-20 bg-white rounded-[2rem] flex items-center justify-center text-4xl shadow-lg">
             {userData.avatar}
           </motion.div>
 
           {/* User Info */}
-          <div className="flex-1" data-magicpath-id="11" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-            <h1 className="text-2xl font-bold text-white mb-1" data-magicpath-id="12" data-magicpath-path="UserProfilePage_dupe_1.tsx">{userData.name}</h1>
-            <p className="text-white/90 text-sm" data-magicpath-id="13" data-magicpath-path="UserProfilePage_dupe_1.tsx">{userData.email}</p>
-            <div className="flex items-center gap-2 mt-2" data-magicpath-id="14" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-              <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-semibold text-white" data-magicpath-id="15" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+          <div className="flex-1">
+            <h1 className="text-2xl font-bold text-white mb-1">{userData.name}</h1>
+            <p className="text-white/90 text-sm">{userData.email}</p>
+            <div className="flex items-center gap-2 mt-2">
+              <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-semibold text-white">
                 Member since {new Date(userData.joinDate).getFullYear()}
               </span>
             </div>
           </div>
 
           {/* Settings Icon */}
-          <button className="p-3 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-all" data-magicpath-id="16" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-            <Settings size={24} className="text-white" data-magicpath-id="17" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
+          <button className="p-3 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-all">
+            <Settings size={24} className="text-white" />
           </button>
         </div>
       </header>
 
       {/* Loyalty Tier Card - Overlapping Header */}
-      <div className="px-6 -mt-12 relative z-20" data-magicpath-id="18" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+      <div className="px-6 -mt-12 relative z-20">
         <motion.div initial={{
         opacity: 0,
         y: 20
@@ -250,31 +250,31 @@ export const UserProfilePage = ({
         y: 0
       }} transition={{
         delay: 0.2
-      }} className={cn('bg-gradient-to-br rounded-[2.5rem] p-6 shadow-xl relative overflow-hidden', getTierColor(tier))} data-magicpath-id="19" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-          <div className="relative z-10" data-magicpath-id="20" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-            <div className="flex items-center justify-between mb-4" data-magicpath-id="21" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-              <div className="flex items-center gap-3" data-magicpath-id="22" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+      }} className={cn('bg-gradient-to-br rounded-[2.5rem] p-6 shadow-xl relative overflow-hidden', getTierColor(tier))}>
+          <div className="relative z-10">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-3">
                 {getTierIcon(tier)}
-                <div data-magicpath-id="23" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                  <p className="text-white/90 text-sm font-medium" data-magicpath-id="24" data-magicpath-path="UserProfilePage_dupe_1.tsx">Current Tier</p>
-                  <p className="text-3xl font-bold text-white" data-magicpath-id="25" data-magicpath-path="UserProfilePage_dupe_1.tsx">{tier}</p>
+                <div>
+                  <p className="text-white/90 text-sm font-medium">Current Tier</p>
+                  <p className="text-3xl font-bold text-white">{tier}</p>
                 </div>
               </div>
-              <div className="text-right" data-magicpath-id="26" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                <p className="text-white/90 text-sm font-medium" data-magicpath-id="27" data-magicpath-path="UserProfilePage_dupe_1.tsx">Points</p>
-                <p className="text-3xl font-bold text-white" data-magicpath-id="28" data-magicpath-path="UserProfilePage_dupe_1.tsx">{currentPoints.toLocaleString()}</p>
+              <div className="text-right">
+                <p className="text-white/90 text-sm font-medium">Points</p>
+                <p className="text-3xl font-bold text-white">{currentPoints.toLocaleString()}</p>
               </div>
             </div>
 
             {/* Progress Bar */}
-            <div className="space-y-2" data-magicpath-id="29" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-              <div className="flex justify-between items-center" data-magicpath-id="30" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                <p className="text-white/90 text-sm font-medium" data-magicpath-id="31" data-magicpath-path="UserProfilePage_dupe_1.tsx">Progress to Platinum</p>
-                <p className="text-white/90 text-sm font-medium" data-magicpath-id="32" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+            <div className="space-y-2">
+              <div className="flex justify-between items-center">
+                <p className="text-white/90 text-sm font-medium">Progress to Platinum</p>
+                <p className="text-white/90 text-sm font-medium">
                   {nextTierPoints - currentPoints} pts to go
                 </p>
               </div>
-              <div className="h-3 bg-white/30 rounded-full overflow-hidden" data-magicpath-id="33" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+              <div className="h-3 bg-white/30 rounded-full overflow-hidden">
                 <motion.div className="h-full bg-white shadow-lg" initial={{
                 width: 0
               }} animate={{
@@ -282,19 +282,19 @@ export const UserProfilePage = ({
               }} transition={{
                 duration: 1,
                 delay: 0.5
-              }} data-magicpath-id="34" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
+              }} />
               </div>
             </div>
           </div>
 
           {/* Decorative elements */}
-          <div className="absolute -right-4 -top-4 w-32 h-32 bg-white/10 rounded-full" data-magicpath-id="35" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
-          <div className="absolute -left-4 -bottom-4 w-24 h-24 bg-white/10 rounded-full" data-magicpath-id="36" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
+          <div className="absolute -right-4 -top-4 w-32 h-32 bg-white/10 rounded-full" />
+          <div className="absolute -left-4 -bottom-4 w-24 h-24 bg-white/10 rounded-full" />
         </motion.div>
       </div>
 
       {/* Content */}
-      <div className="flex-1 overflow-y-auto pb-32 px-6 pt-6" data-magicpath-id="37" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+      <div className="flex-1 overflow-y-auto pb-32 px-6 pt-6">
         {/* Points Breakdown */}
         <motion.div initial={{
         opacity: 0,
@@ -304,20 +304,20 @@ export const UserProfilePage = ({
         y: 0
       }} transition={{
         delay: 0.3
-      }} className="bg-white rounded-[2.5rem] p-6 shadow-sm mb-6" data-magicpath-id="38" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-          <h3 className="text-lg font-semibold text-zinc-800 mb-4 flex items-center gap-2" data-magicpath-id="39" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+      }} className="bg-white rounded-[2.5rem] p-6 shadow-sm mb-6">
+          <h3 className="text-lg font-semibold text-zinc-800 mb-4 flex items-center gap-2">
             <Sparkles size={20} className="text-[#DDF247]" />
             Points Breakdown
           </h3>
-          <div className="space-y-3" data-magicpath-id="40" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+          <div className="space-y-3">
             {Object.entries(pointsBreakdown).map(([category, points], index) => {
             const percent = points / currentPoints * 100;
-            return <div key={category} data-magicpath-id="41" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                  <div className="flex justify-between items-center mb-1" data-magicpath-id="42" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                    <span className="text-sm font-medium text-zinc-700 capitalize" data-magicpath-id="43" data-magicpath-path="UserProfilePage_dupe_1.tsx">{category}</span>
-                    <span className="text-sm font-bold text-[#005C4B]" data-magicpath-id="44" data-magicpath-path="UserProfilePage_dupe_1.tsx">{points} pts</span>
+            return <div key={category}>
+                  <div className="flex justify-between items-center mb-1">
+                    <span className="text-sm font-medium text-zinc-700 capitalize">{category}</span>
+                    <span className="text-sm font-bold text-[#005C4B]">{points} pts</span>
                   </div>
-                  <div className="h-2 bg-zinc-100 rounded-full overflow-hidden" data-magicpath-id="45" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+                  <div className="h-2 bg-zinc-100 rounded-full overflow-hidden">
                     <motion.div className="h-full bg-gradient-to-r from-[#DDF247] to-[#005C4B]" initial={{
                   width: 0
                 }} animate={{
@@ -325,7 +325,7 @@ export const UserProfilePage = ({
                 }} transition={{
                   duration: 0.8,
                   delay: 0.4 + index * 0.1
-                }} data-magicpath-id="46" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
+                }} />
                   </div>
                 </div>;
           })}
@@ -333,7 +333,7 @@ export const UserProfilePage = ({
         </motion.div>
 
         {/* Interactive Info Cards */}
-        <div className="space-y-4" data-magicpath-id="47" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+        <div className="space-y-4">
           {/* My Orders */}
           <motion.div initial={{
           opacity: 0,
@@ -343,27 +343,27 @@ export const UserProfilePage = ({
           y: 0
         }} transition={{
           delay: 0.4
-        }} className="bg-white rounded-[2rem] overflow-hidden shadow-sm" data-magicpath-id="48" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-            <button onClick={() => toggleSection('orders')} className="w-full p-6 flex items-center justify-between hover:bg-zinc-50 transition-colors" data-magicpath-id="49" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-              <div className="flex items-center gap-4" data-magicpath-id="50" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                <div className="w-12 h-12 bg-[#E0E0FF] rounded-2xl flex items-center justify-center" data-magicpath-id="51" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                  <Package size={24} className="text-[#005C4B]" data-magicpath-id="52" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
+        }} className="bg-white rounded-[2rem] overflow-hidden shadow-sm">
+            <button onClick={() => toggleSection('orders')} className="w-full p-6 flex items-center justify-between hover:bg-zinc-50 transition-colors">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-[#E0E0FF] rounded-2xl flex items-center justify-center">
+                  <Package size={24} className="text-[#005C4B]" />
                 </div>
-                <div className="text-left" data-magicpath-id="53" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                  <h3 className="font-semibold text-zinc-800" data-magicpath-id="54" data-magicpath-path="UserProfilePage_dupe_1.tsx">My Orders</h3>
-                  <p className="text-sm text-zinc-500" data-magicpath-id="55" data-magicpath-path="UserProfilePage_dupe_1.tsx">{totalOrders} orders</p>
+                <div className="text-left">
+                  <h3 className="font-semibold text-zinc-800">My Orders</h3>
+                  <p className="text-sm text-zinc-500">{totalOrders} orders</p>
                 </div>
               </div>
               <motion.div animate={{
               rotate: expandedSection === 'orders' ? 180 : 0
             }} transition={{
               duration: 0.3
-            }} data-magicpath-id="56" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                <ChevronDown size={24} className="text-zinc-400" data-magicpath-id="57" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
+            }}>
+                <ChevronDown size={24} className="text-zinc-400" />
               </motion.div>
             </button>
 
-            <AnimatePresence data-magicpath-id="58" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+            <AnimatePresence>
               {expandedSection === 'orders' && <motion.div initial={{
               height: 0,
               opacity: 0
@@ -375,8 +375,8 @@ export const UserProfilePage = ({
               opacity: 0
             }} transition={{
               duration: 0.3
-            }} className="overflow-hidden" data-magicpath-id="59" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                  <div className="px-6 pb-6 space-y-3 border-t border-zinc-100" data-magicpath-id="60" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+            }} className="overflow-hidden">
+                  <div className="px-6 pb-6 space-y-3 border-t border-zinc-100">
                     {mockOrders.map((order, index) => <motion.div key={order.id} initial={{
                   opacity: 0,
                   x: -20
@@ -385,11 +385,11 @@ export const UserProfilePage = ({
                   x: 0
                 }} transition={{
                   delay: index * 0.1
-                }} className="pt-3" data-magicpath-id="61" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                        <div className="flex items-start justify-between mb-2" data-magicpath-id="62" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                          <div data-magicpath-id="63" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                            <p className="font-semibold text-zinc-800 text-sm" data-magicpath-id="64" data-magicpath-path="UserProfilePage_dupe_1.tsx">{order.id}</p>
-                            <p className="text-xs text-zinc-500" data-magicpath-id="65" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+                }} className="pt-3">
+                        <div className="flex items-start justify-between mb-2">
+                          <div>
+                            <p className="font-semibold text-zinc-800 text-sm">{order.id}</p>
+                            <p className="text-xs text-zinc-500">
                               {new Date(order.date).toLocaleDateString('en-US', {
                           month: 'short',
                           day: 'numeric',
@@ -397,28 +397,28 @@ export const UserProfilePage = ({
                         })}
                             </p>
                           </div>
-                          <div className="flex items-center gap-2" data-magicpath-id="66" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                            {order.status === 'delivered' ? <span className="px-3 py-1 bg-green-50 text-green-600 text-xs font-semibold rounded-full flex items-center gap-1" data-magicpath-id="67" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                                <CheckCircle size={12} data-magicpath-id="68" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
+                          <div className="flex items-center gap-2">
+                            {order.status === 'delivered' ? <span className="px-3 py-1 bg-green-50 text-green-600 text-xs font-semibold rounded-full flex items-center gap-1">
+                                <CheckCircle size={12} />
                                 Delivered
-                              </span> : order.status === 'processing' ? <span className="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-semibold rounded-full flex items-center gap-1" data-magicpath-id="69" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                                <Clock size={12} data-magicpath-id="70" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
+                              </span> : order.status === 'processing' ? <span className="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-semibold rounded-full flex items-center gap-1">
+                                <Clock size={12} />
                                 Processing
-                              </span> : <span className="px-3 py-1 bg-red-50 text-red-600 text-xs font-semibold rounded-full flex items-center gap-1" data-magicpath-id="71" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                                <XCircle size={12} data-magicpath-id="72" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
+                              </span> : <span className="px-3 py-1 bg-red-50 text-red-600 text-xs font-semibold rounded-full flex items-center gap-1">
+                                <XCircle size={12} />
                                 Cancelled
                               </span>}
                           </div>
                         </div>
-                        <div className="flex flex-wrap gap-1 mb-2" data-magicpath-id="73" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                          {order.items.map((item, idx) => <span key={idx} className="text-xs text-zinc-600" data-magicpath-id="74" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+                        <div className="flex flex-wrap gap-1 mb-2">
+                          {order.items.map((item, idx) => <span key={idx} className="text-xs text-zinc-600">
                               {item}
                               {idx < order.items.length - 1 ? ', ' : ''}
                             </span>)}
                         </div>
-                        <p className="text-sm font-bold text-[#2A1805]" data-magicpath-id="75" data-magicpath-path="UserProfilePage_dupe_1.tsx">${order.total}</p>
+                        <p className="text-sm font-bold text-[#2A1805]">${order.total}</p>
                       </motion.div>)}
-                    <button className="w-full py-3 px-4 bg-[#005C4B] text-white rounded-xl font-semibold text-sm hover:bg-[#004a3d] transition-colors mt-2" data-magicpath-id="76" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+                    <button className="w-full py-3 px-4 bg-[#005C4B] text-white rounded-xl font-semibold text-sm hover:bg-[#004a3d] transition-colors mt-2">
                       View All Orders
                     </button>
                   </div>
@@ -435,27 +435,27 @@ export const UserProfilePage = ({
           y: 0
         }} transition={{
           delay: 0.5
-        }} className="bg-white rounded-[2rem] overflow-hidden shadow-sm" data-magicpath-id="77" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-            <button onClick={() => toggleSection('listings')} className="w-full p-6 flex items-center justify-between hover:bg-zinc-50 transition-colors" data-magicpath-id="78" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-              <div className="flex items-center gap-4" data-magicpath-id="79" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                <div className="w-12 h-12 bg-[#DDF247] rounded-2xl flex items-center justify-center" data-magicpath-id="80" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                  <ShoppingBag size={24} className="text-[#005C4B]" data-magicpath-id="81" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
+        }} className="bg-white rounded-[2rem] overflow-hidden shadow-sm">
+            <button onClick={() => toggleSection('listings')} className="w-full p-6 flex items-center justify-between hover:bg-zinc-50 transition-colors">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-[#DDF247] rounded-2xl flex items-center justify-center">
+                  <ShoppingBag size={24} className="text-[#005C4B]" />
                 </div>
-                <div className="text-left" data-magicpath-id="82" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                  <h3 className="font-semibold text-zinc-800" data-magicpath-id="83" data-magicpath-path="UserProfilePage_dupe_1.tsx">My Listings</h3>
-                  <p className="text-sm text-zinc-500" data-magicpath-id="84" data-magicpath-path="UserProfilePage_dupe_1.tsx">{totalListings} active listings</p>
+                <div className="text-left">
+                  <h3 className="font-semibold text-zinc-800">My Listings</h3>
+                  <p className="text-sm text-zinc-500">{totalListings} active listings</p>
                 </div>
               </div>
               <motion.div animate={{
               rotate: expandedSection === 'listings' ? 180 : 0
             }} transition={{
               duration: 0.3
-            }} data-magicpath-id="85" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                <ChevronDown size={24} className="text-zinc-400" data-magicpath-id="86" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
+            }}>
+                <ChevronDown size={24} className="text-zinc-400" />
               </motion.div>
             </button>
 
-            <AnimatePresence data-magicpath-id="87" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+            <AnimatePresence>
               {expandedSection === 'listings' && <motion.div initial={{
               height: 0,
               opacity: 0
@@ -467,8 +467,8 @@ export const UserProfilePage = ({
               opacity: 0
             }} transition={{
               duration: 0.3
-            }} className="overflow-hidden" data-magicpath-id="88" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                  <div className="px-6 pb-6 space-y-3 border-t border-zinc-100" data-magicpath-id="89" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+            }} className="overflow-hidden">
+                  <div className="px-6 pb-6 space-y-3 border-t border-zinc-100">
                     {mockListings.map((listing, index) => <motion.div key={listing.id} initial={{
                   opacity: 0,
                   x: -20
@@ -477,31 +477,31 @@ export const UserProfilePage = ({
                   x: 0
                 }} transition={{
                   delay: index * 0.1
-                }} className="pt-3 flex items-center justify-between" data-magicpath-id="90" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                        <div className="flex-1" data-magicpath-id="91" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                          <p className="font-semibold text-zinc-800 text-sm mb-1" data-magicpath-id="92" data-magicpath-path="UserProfilePage_dupe_1.tsx">{listing.title}</p>
-                          <div className="flex items-center gap-3" data-magicpath-id="93" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                            <span className="text-sm font-bold text-[#005C4B]" data-magicpath-id="94" data-magicpath-path="UserProfilePage_dupe_1.tsx">${listing.price}</span>
-                            <span className="text-xs text-zinc-500 flex items-center gap-1" data-magicpath-id="95" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                              <BarChart3 size={12} data-magicpath-id="96" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
+                }} className="pt-3 flex items-center justify-between">
+                        <div className="flex-1">
+                          <p className="font-semibold text-zinc-800 text-sm mb-1">{listing.title}</p>
+                          <div className="flex items-center gap-3">
+                            <span className="text-sm font-bold text-[#005C4B]">${listing.price}</span>
+                            <span className="text-xs text-zinc-500 flex items-center gap-1">
+                              <BarChart3 size={12} />
                               {listing.views} views
                             </span>
                           </div>
                         </div>
-                        <div className="flex items-center gap-2" data-magicpath-id="97" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                          {listing.status === 'active' ? <span className="px-3 py-1 bg-green-50 text-green-600 text-xs font-semibold rounded-full" data-magicpath-id="98" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+                        <div className="flex items-center gap-2">
+                          {listing.status === 'active' ? <span className="px-3 py-1 bg-green-50 text-green-600 text-xs font-semibold rounded-full">
                               Active
-                            </span> : listing.status === 'sold' ? <span className="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-semibold rounded-full" data-magicpath-id="99" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+                            </span> : listing.status === 'sold' ? <span className="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-semibold rounded-full">
                               Sold
-                            </span> : <span className="px-3 py-1 bg-zinc-100 text-zinc-600 text-xs font-semibold rounded-full" data-magicpath-id="100" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+                            </span> : <span className="px-3 py-1 bg-zinc-100 text-zinc-600 text-xs font-semibold rounded-full">
                               Expired
                             </span>}
-                          <button className="p-2 hover:bg-zinc-100 rounded-lg transition-colors" data-magicpath-id="101" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                            <Edit2 size={16} className="text-zinc-400" data-magicpath-id="102" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
+                          <button className="p-2 hover:bg-zinc-100 rounded-lg transition-colors">
+                            <Edit2 size={16} className="text-zinc-400" />
                           </button>
                         </div>
                       </motion.div>)}
-                    <button className="w-full py-3 px-4 bg-[#DDF247] text-[#2A1805] rounded-xl font-semibold text-sm hover:bg-[#B8E635] transition-colors mt-2" data-magicpath-id="103" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+                    <button className="w-full py-3 px-4 bg-[#DDF247] text-[#2A1805] rounded-xl font-semibold text-sm hover:bg-[#B8E635] transition-colors mt-2">
                       Create New Listing
                     </button>
                   </div>
@@ -518,27 +518,27 @@ export const UserProfilePage = ({
           y: 0
         }} transition={{
           delay: 0.6
-        }} className="bg-white rounded-[2rem] overflow-hidden shadow-sm" data-magicpath-id="104" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-            <button onClick={() => toggleSection('pickups')} className="w-full p-6 flex items-center justify-between hover:bg-zinc-50 transition-colors" data-magicpath-id="105" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-              <div className="flex items-center gap-4" data-magicpath-id="106" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-500 rounded-2xl flex items-center justify-center" data-magicpath-id="107" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                  <Truck size={24} className="text-white" data-magicpath-id="108" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
+        }} className="bg-white rounded-[2rem] overflow-hidden shadow-sm">
+            <button onClick={() => toggleSection('pickups')} className="w-full p-6 flex items-center justify-between hover:bg-zinc-50 transition-colors">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-500 rounded-2xl flex items-center justify-center">
+                  <Truck size={24} className="text-white" />
                 </div>
-                <div className="text-left" data-magicpath-id="109" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                  <h3 className="font-semibold text-zinc-800" data-magicpath-id="110" data-magicpath-path="UserProfilePage_dupe_1.tsx">My Pickups</h3>
-                  <p className="text-sm text-zinc-500" data-magicpath-id="111" data-magicpath-path="UserProfilePage_dupe_1.tsx">{totalPickups} scheduled</p>
+                <div className="text-left">
+                  <h3 className="font-semibold text-zinc-800">My Pickups</h3>
+                  <p className="text-sm text-zinc-500">{totalPickups} scheduled</p>
                 </div>
               </div>
               <motion.div animate={{
               rotate: expandedSection === 'pickups' ? 180 : 0
             }} transition={{
               duration: 0.3
-            }} data-magicpath-id="112" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                <ChevronDown size={24} className="text-zinc-400" data-magicpath-id="113" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
+            }}>
+                <ChevronDown size={24} className="text-zinc-400" />
               </motion.div>
             </button>
 
-            <AnimatePresence data-magicpath-id="114" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+            <AnimatePresence>
               {expandedSection === 'pickups' && <motion.div initial={{
               height: 0,
               opacity: 0
@@ -550,8 +550,8 @@ export const UserProfilePage = ({
               opacity: 0
             }} transition={{
               duration: 0.3
-            }} className="overflow-hidden" data-magicpath-id="115" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                  <div className="px-6 pb-6 space-y-3 border-t border-zinc-100" data-magicpath-id="116" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+            }} className="overflow-hidden">
+                  <div className="px-6 pb-6 space-y-3 border-t border-zinc-100">
                     {mockPickups.map((pickup, index) => <motion.div key={pickup.id} initial={{
                   opacity: 0,
                   x: -20
@@ -560,27 +560,27 @@ export const UserProfilePage = ({
                   x: 0
                 }} transition={{
                   delay: index * 0.1
-                }} className="pt-3" data-magicpath-id="117" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                        <div className="flex items-start justify-between mb-2" data-magicpath-id="118" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                          <div data-magicpath-id="119" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                            <p className="font-semibold text-zinc-800 text-sm" data-magicpath-id="120" data-magicpath-path="UserProfilePage_dupe_1.tsx">{pickup.date}</p>
-                            <p className="text-xs text-zinc-500" data-magicpath-id="121" data-magicpath-path="UserProfilePage_dupe_1.tsx">{pickup.time}</p>
+                }} className="pt-3">
+                        <div className="flex items-start justify-between mb-2">
+                          <div>
+                            <p className="font-semibold text-zinc-800 text-sm">{pickup.date}</p>
+                            <p className="text-xs text-zinc-500">{pickup.time}</p>
                           </div>
-                          {pickup.status === 'scheduled' ? <span className="px-3 py-1 bg-[#DDF247] text-[#2A1805] text-xs font-semibold rounded-full" data-magicpath-id="122" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+                          {pickup.status === 'scheduled' ? <span className="px-3 py-1 bg-[#DDF247] text-[#2A1805] text-xs font-semibold rounded-full">
                               Scheduled
-                            </span> : pickup.status === 'completed' ? <span className="px-3 py-1 bg-green-50 text-green-600 text-xs font-semibold rounded-full" data-magicpath-id="123" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+                            </span> : pickup.status === 'completed' ? <span className="px-3 py-1 bg-green-50 text-green-600 text-xs font-semibold rounded-full">
                               Completed
-                            </span> : <span className="px-3 py-1 bg-red-50 text-red-600 text-xs font-semibold rounded-full" data-magicpath-id="124" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+                            </span> : <span className="px-3 py-1 bg-red-50 text-red-600 text-xs font-semibold rounded-full">
                               Cancelled
                             </span>}
                         </div>
-                        <div className="flex flex-wrap gap-2" data-magicpath-id="125" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                          {pickup.items.map((item, idx) => <span key={idx} className="px-3 py-1 bg-zinc-100 text-zinc-700 text-xs font-medium rounded-full" data-magicpath-id="126" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+                        <div className="flex flex-wrap gap-2">
+                          {pickup.items.map((item, idx) => <span key={idx} className="px-3 py-1 bg-zinc-100 text-zinc-700 text-xs font-medium rounded-full">
                               {item}
                             </span>)}
                         </div>
                       </motion.div>)}
-                    <button className="w-full py-3 px-4 bg-gradient-to-r from-[#DDF247] to-[#B8E635] text-[#2A1805] rounded-xl font-semibold text-sm hover:shadow-md transition-all mt-2" data-magicpath-id="127" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+                    <button className="w-full py-3 px-4 bg-gradient-to-r from-[#DDF247] to-[#B8E635] text-[#2A1805] rounded-xl font-semibold text-sm hover:shadow-md transition-all mt-2">
                       Schedule New Pickup
                     </button>
                   </div>
@@ -597,27 +597,27 @@ export const UserProfilePage = ({
           y: 0
         }} transition={{
           delay: 0.7
-        }} className="bg-white rounded-[2rem] overflow-hidden shadow-sm" data-magicpath-id="128" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-            <button onClick={() => toggleSection('rewards')} className="w-full p-6 flex items-center justify-between hover:bg-zinc-50 transition-colors" data-magicpath-id="129" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-              <div className="flex items-center gap-4" data-magicpath-id="130" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-500 rounded-2xl flex items-center justify-center" data-magicpath-id="131" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                  <Gift size={24} className="text-white" data-magicpath-id="132" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
+        }} className="bg-white rounded-[2rem] overflow-hidden shadow-sm">
+            <button onClick={() => toggleSection('rewards')} className="w-full p-6 flex items-center justify-between hover:bg-zinc-50 transition-colors">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-500 rounded-2xl flex items-center justify-center">
+                  <Gift size={24} className="text-white" />
                 </div>
-                <div className="text-left" data-magicpath-id="133" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                  <h3 className="font-semibold text-zinc-800" data-magicpath-id="134" data-magicpath-path="UserProfilePage_dupe_1.tsx">My Rewards</h3>
-                  <p className="text-sm text-zinc-500" data-magicpath-id="135" data-magicpath-path="UserProfilePage_dupe_1.tsx">{mockRewards.filter(r => !r.redeemed).length} available</p>
+                <div className="text-left">
+                  <h3 className="font-semibold text-zinc-800">My Rewards</h3>
+                  <p className="text-sm text-zinc-500">{mockRewards.filter(r => !r.redeemed).length} available</p>
                 </div>
               </div>
               <motion.div animate={{
               rotate: expandedSection === 'rewards' ? 180 : 0
             }} transition={{
               duration: 0.3
-            }} data-magicpath-id="136" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                <ChevronDown size={24} className="text-zinc-400" data-magicpath-id="137" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
+            }}>
+                <ChevronDown size={24} className="text-zinc-400" />
               </motion.div>
             </button>
 
-            <AnimatePresence data-magicpath-id="138" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+            <AnimatePresence>
               {expandedSection === 'rewards' && <motion.div initial={{
               height: 0,
               opacity: 0
@@ -629,8 +629,8 @@ export const UserProfilePage = ({
               opacity: 0
             }} transition={{
               duration: 0.3
-            }} className="overflow-hidden" data-magicpath-id="139" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                  <div className="px-6 pb-6 space-y-3 border-t border-zinc-100" data-magicpath-id="140" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+            }} className="overflow-hidden">
+                  <div className="px-6 pb-6 space-y-3 border-t border-zinc-100">
                     {mockRewards.map((reward, index) => <motion.div key={reward.id} initial={{
                   opacity: 0,
                   x: -20
@@ -639,20 +639,20 @@ export const UserProfilePage = ({
                   x: 0
                 }} transition={{
                   delay: index * 0.1
-                }} className={cn('pt-3 p-4 rounded-xl', reward.redeemed ? 'bg-zinc-50' : 'bg-gradient-to-r from-purple-50 to-pink-50')} data-magicpath-id="141" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                        <div className="flex items-center justify-between mb-2" data-magicpath-id="142" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                          <div className="flex-1" data-magicpath-id="143" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                            <p className={cn('font-semibold text-sm mb-1', reward.redeemed ? 'text-zinc-500' : 'text-zinc-800')} data-magicpath-id="144" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+                }} className={cn('pt-3 p-4 rounded-xl', reward.redeemed ? 'bg-zinc-50' : 'bg-gradient-to-r from-purple-50 to-pink-50')}>
+                        <div className="flex items-center justify-between mb-2">
+                          <div className="flex-1">
+                            <p className={cn('font-semibold text-sm mb-1', reward.redeemed ? 'text-zinc-500' : 'text-zinc-800')}>
                               {reward.name}
                             </p>
-                            <div className="flex items-center gap-2" data-magicpath-id="145" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                              <span className={cn('text-xs font-bold', reward.redeemed ? 'text-zinc-400' : 'text-purple-600')} data-magicpath-id="146" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+                            <div className="flex items-center gap-2">
+                              <span className={cn('text-xs font-bold', reward.redeemed ? 'text-zinc-400' : 'text-purple-600')}>
                                 {reward.points} points
                               </span>
-                              {reward.redeemed && reward.date && <span className="text-xs text-zinc-400" data-magicpath-id="147" data-magicpath-path="UserProfilePage_dupe_1.tsx">• Redeemed {reward.date}</span>}
+                              {reward.redeemed && reward.date && <span className="text-xs text-zinc-400">• Redeemed {reward.date}</span>}
                             </div>
                           </div>
-                          {reward.redeemed ? <CheckCircle size={20} className="text-green-500" data-magicpath-id="148" data-magicpath-path="UserProfilePage_dupe_1.tsx" /> : <button disabled={currentPoints < reward.points} className={cn('px-4 py-2 rounded-lg text-xs font-semibold transition-colors', currentPoints >= reward.points ? 'bg-purple-500 text-white hover:bg-purple-600' : 'bg-zinc-200 text-zinc-400 cursor-not-allowed')} data-magicpath-id="149" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+                          {reward.redeemed ? <CheckCircle size={20} className="text-green-500" /> : <button disabled={currentPoints < reward.points} className={cn('px-4 py-2 rounded-lg text-xs font-semibold transition-colors', currentPoints >= reward.points ? 'bg-purple-500 text-white hover:bg-purple-600' : 'bg-zinc-200 text-zinc-400 cursor-not-allowed')}>
                               Redeem
                             </button>}
                         </div>
@@ -671,36 +671,36 @@ export const UserProfilePage = ({
           y: 0
         }} transition={{
           delay: 0.8
-        }} className="bg-gradient-to-br from-green-400 to-green-500 rounded-[2.5rem] p-6 shadow-sm relative overflow-hidden" data-magicpath-id="150" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-            <div className="relative z-10" data-magicpath-id="151" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-              <div className="flex items-center gap-2 mb-4" data-magicpath-id="152" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                <Leaf size={24} className="text-white" data-magicpath-id="153" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
-                <h3 className="text-lg font-semibold text-white" data-magicpath-id="154" data-magicpath-path="UserProfilePage_dupe_1.tsx">Environmental Impact</h3>
+        }} className="bg-gradient-to-br from-green-400 to-green-500 rounded-[2.5rem] p-6 shadow-sm relative overflow-hidden">
+            <div className="relative z-10">
+              <div className="flex items-center gap-2 mb-4">
+                <Leaf size={24} className="text-white" />
+                <h3 className="text-lg font-semibold text-white">Environmental Impact</h3>
               </div>
 
-              <div className="grid grid-cols-3 gap-4 mb-4" data-magicpath-id="155" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                <div className="text-center" data-magicpath-id="156" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                  <p className="text-3xl font-bold text-white mb-1" data-magicpath-id="157" data-magicpath-path="UserProfilePage_dupe_1.tsx">{itemsRecycled}</p>
-                  <p className="text-xs text-white/80" data-magicpath-id="158" data-magicpath-path="UserProfilePage_dupe_1.tsx">Items Recycled</p>
+              <div className="grid grid-cols-3 gap-4 mb-4">
+                <div className="text-center">
+                  <p className="text-3xl font-bold text-white mb-1">{itemsRecycled}</p>
+                  <p className="text-xs text-white/80">Items Recycled</p>
                 </div>
-                <div className="text-center" data-magicpath-id="159" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                  <p className="text-3xl font-bold text-white mb-1" data-magicpath-id="160" data-magicpath-path="UserProfilePage_dupe_1.tsx">{co2Saved}kg</p>
-                  <p className="text-xs text-white/80" data-magicpath-id="161" data-magicpath-path="UserProfilePage_dupe_1.tsx">CO₂ Saved</p>
+                <div className="text-center">
+                  <p className="text-3xl font-bold text-white mb-1">{co2Saved}kg</p>
+                  <p className="text-xs text-white/80">CO₂ Saved</p>
                 </div>
-                <div className="text-center" data-magicpath-id="162" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                  <p className="text-3xl font-bold text-white mb-1" data-magicpath-id="163" data-magicpath-path="UserProfilePage_dupe_1.tsx">{treesEquivalent}</p>
-                  <p className="text-xs text-white/80" data-magicpath-id="164" data-magicpath-path="UserProfilePage_dupe_1.tsx">Trees Saved</p>
+                <div className="text-center">
+                  <p className="text-3xl font-bold text-white mb-1">{treesEquivalent}</p>
+                  <p className="text-xs text-white/80">Trees Saved</p>
                 </div>
               </div>
 
-              <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4" data-magicpath-id="165" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                <p className="text-sm text-white font-medium" data-magicpath-id="166" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+              <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4">
+                <p className="text-sm text-white font-medium">
                   🌱 Your recycling efforts have saved the equivalent of planting {treesEquivalent} trees! Keep up the great work!
                 </p>
               </div>
             </div>
 
-            <div className="absolute -right-4 -bottom-4 w-32 h-32 bg-white/10 rounded-full" data-magicpath-id="167" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
+            <div className="absolute -right-4 -bottom-4 w-32 h-32 bg-white/10 rounded-full" />
           </motion.div>
 
           {/* Account Settings & Support */}
@@ -712,53 +712,53 @@ export const UserProfilePage = ({
           y: 0
         }} transition={{
           delay: 0.9
-        }} className="space-y-3" data-magicpath-id="168" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-            <button className="w-full bg-white rounded-[2rem] p-5 flex items-center justify-between hover:bg-zinc-50 transition-colors shadow-sm" data-magicpath-id="169" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-              <div className="flex items-center gap-4" data-magicpath-id="170" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                <div className="w-12 h-12 bg-[#E0E0FF] rounded-2xl flex items-center justify-center" data-magicpath-id="171" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                  <Settings size={24} className="text-[#005C4B]" data-magicpath-id="172" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
+        }} className="space-y-3">
+            <button className="w-full bg-white rounded-[2rem] p-5 flex items-center justify-between hover:bg-zinc-50 transition-colors shadow-sm">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-[#E0E0FF] rounded-2xl flex items-center justify-center">
+                  <Settings size={24} className="text-[#005C4B]" />
                 </div>
-                <span className="font-semibold text-zinc-800" data-magicpath-id="173" data-magicpath-path="UserProfilePage_dupe_1.tsx">Account Settings</span>
+                <span className="font-semibold text-zinc-800">Account Settings</span>
               </div>
-              <ChevronRight size={24} className="text-zinc-400" data-magicpath-id="174" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
+              <ChevronRight size={24} className="text-zinc-400" />
             </button>
 
-            <button className="w-full bg-white rounded-[2rem] p-5 flex items-center justify-between hover:bg-zinc-50 transition-colors shadow-sm" data-magicpath-id="175" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-              <div className="flex items-center gap-4" data-magicpath-id="176" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                <div className="w-12 h-12 bg-[#FFE4B5] rounded-2xl flex items-center justify-center" data-magicpath-id="177" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                  <Share2 size={24} className="text-[#005C4B]" data-magicpath-id="178" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
+            <button className="w-full bg-white rounded-[2rem] p-5 flex items-center justify-between hover:bg-zinc-50 transition-colors shadow-sm">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-[#FFE4B5] rounded-2xl flex items-center justify-center">
+                  <Share2 size={24} className="text-[#005C4B]" />
                 </div>
-                <span className="font-semibold text-zinc-800" data-magicpath-id="179" data-magicpath-path="UserProfilePage_dupe_1.tsx">Referral Program</span>
+                <span className="font-semibold text-zinc-800">Referral Program</span>
               </div>
-              <ChevronRight size={24} className="text-zinc-400" data-magicpath-id="180" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
+              <ChevronRight size={24} className="text-zinc-400" />
             </button>
 
-            <button className="w-full bg-white rounded-[2rem] p-5 flex items-center justify-between hover:bg-zinc-50 transition-colors shadow-sm" data-magicpath-id="181" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-              <div className="flex items-center gap-4" data-magicpath-id="182" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                <div className="w-12 h-12 bg-[#C0F0D8] rounded-2xl flex items-center justify-center" data-magicpath-id="183" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                  <HelpCircle size={24} className="text-[#005C4B]" data-magicpath-id="184" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
+            <button className="w-full bg-white rounded-[2rem] p-5 flex items-center justify-between hover:bg-zinc-50 transition-colors shadow-sm">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-[#C0F0D8] rounded-2xl flex items-center justify-center">
+                  <HelpCircle size={24} className="text-[#005C4B]" />
                 </div>
-                <span className="font-semibold text-zinc-800" data-magicpath-id="185" data-magicpath-path="UserProfilePage_dupe_1.tsx">Help & Support</span>
+                <span className="font-semibold text-zinc-800">Help & Support</span>
               </div>
-              <ChevronRight size={24} className="text-zinc-400" data-magicpath-id="186" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
+              <ChevronRight size={24} className="text-zinc-400" />
             </button>
 
-            <button className="w-full bg-white rounded-[2rem] p-5 flex items-center justify-between hover:bg-red-50 transition-colors shadow-sm group" data-magicpath-id="187" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-              <div className="flex items-center gap-4" data-magicpath-id="188" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                <div className="w-12 h-12 bg-red-50 group-hover:bg-red-100 rounded-2xl flex items-center justify-center transition-colors" data-magicpath-id="189" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                  <LogOut size={24} className="text-red-500" data-magicpath-id="190" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
+            <button className="w-full bg-white rounded-[2rem] p-5 flex items-center justify-between hover:bg-red-50 transition-colors shadow-sm group">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-red-50 group-hover:bg-red-100 rounded-2xl flex items-center justify-center transition-colors">
+                  <LogOut size={24} className="text-red-500" />
                 </div>
-                <span className="font-semibold text-red-500" data-magicpath-id="191" data-magicpath-path="UserProfilePage_dupe_1.tsx">Log Out</span>
+                <span className="font-semibold text-red-500">Log Out</span>
               </div>
-              <ChevronRight size={24} className="text-red-400" data-magicpath-id="192" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
+              <ChevronRight size={24} className="text-red-400" />
             </button>
           </motion.div>
         </div>
       </div>
 
       {/* Floating Bottom Navbar */}
-      <div className="absolute bottom-8 left-0 right-0 px-6 z-50 flex justify-center pointer-events-none" data-magicpath-id="193" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-        <nav className="bg-white p-2.5 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.12)] flex items-center gap-2 pointer-events-auto max-w-md w-full justify-between" data-magicpath-id="194" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+      <div className="absolute bottom-8 left-0 right-0 px-6 z-50 flex justify-center pointer-events-none">
+        <nav className="bg-white p-2.5 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.12)] flex items-center gap-2 pointer-events-auto max-w-md w-full justify-between">
           {navItems.map(item => {
           const isActive = activeTab === item.id;
           return <motion.button key={item.id} onClick={() => {
@@ -779,8 +779,8 @@ export const UserProfilePage = ({
             type: 'spring',
             stiffness: 500,
             damping: 35
-          }} data-magicpath-id="195" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                <AnimatePresence mode="wait" data-magicpath-id="196" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+          }}>
+                <AnimatePresence mode="wait">
                   {isActive && <motion.div className="flex items-center gap-3 overflow-hidden whitespace-nowrap" initial={{
                 opacity: 0,
                 width: 0
@@ -793,8 +793,8 @@ export const UserProfilePage = ({
               }} transition={{
                 duration: 0.3,
                 delay: 0.1
-              }} data-magicpath-id="197" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                      <item.icon size={20} className="text-white shrink-0" strokeWidth={2.5} data-magicpath-id="198" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
+              }}>
+                      <item.icon size={20} className="text-white shrink-0" strokeWidth={2.5} />
                       <motion.span className="text-white font-semibold text-sm tracking-wide" initial={{
                   opacity: 0,
                   x: -10
@@ -803,7 +803,7 @@ export const UserProfilePage = ({
                   x: 0
                 }} transition={{
                   delay: 0.15
-                }} data-magicpath-id="199" data-magicpath-path="UserProfilePage_dupe_1.tsx">
+                }}>
                         {item.label}
                       </motion.span>
                     </motion.div>}
@@ -820,8 +820,8 @@ export const UserProfilePage = ({
               scale: 0
             }} transition={{
               duration: 0.2
-            }} data-magicpath-id="200" data-magicpath-path="UserProfilePage_dupe_1.tsx">
-                    <item.icon size={24} className="text-zinc-400" strokeWidth={2} data-magicpath-id="201" data-magicpath-path="UserProfilePage_dupe_1.tsx" />
+            }}>
+                    <item.icon size={24} className="text-zinc-400" strokeWidth={2} />
                   </motion.div>}
               </motion.button>;
         })}
