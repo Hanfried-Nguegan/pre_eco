@@ -37,17 +37,17 @@ interface Address {
 const savedAddresses: Address[] = [{
   id: '1',
   name: 'Home',
-  street: '123 Eco Street, Green District',
-  city: 'Sustainability City',
-  zip: '12345',
+  street: 'Am Hasenbuckel 14',
+  city: 'Neckarsulm',
+  zip: '74172',
   phone: '+1 234 567 8900',
   isDefault: true
 }, {
   id: '2',
   name: 'Work',
-  street: '456 Recycle Avenue, Eco Plaza',
-  city: 'Green Town',
-  zip: '54321',
+  street: 'Stuttgarter Str. 10',
+  city: 'Heilbronn',
+  zip: '74073',
   phone: '+1 234 567 8901',
   isDefault: false
 }];
@@ -61,12 +61,11 @@ export const CheckoutPage = ({
   const [selectedPayment, setSelectedPayment] = useState<PaymentMethod>('card');
   const [isProcessing, setIsProcessing] = useState(false);
 
-  // Calculate totals
   const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const totalPoints = cartItems.reduce((sum, item) => sum + item.points * item.quantity, 0);
   const shipping = subtotal > 50 ? 0 : 5.99;
   const total = subtotal + shipping;
-  const userPoints = 8500; // Mock user's available points
+  const userPoints = 8500;
   const canPayWithPoints = userPoints >= totalPoints;
   const handleNext = () => {
     const steps: CheckoutStep[] = ['address', 'payment', 'review'];

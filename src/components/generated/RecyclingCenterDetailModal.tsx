@@ -24,7 +24,7 @@ interface RecyclingCenterDetailModalProps {
 const getDetailedCenterData = (markerData: MarkerData) => {
   return {
     ...markerData,
-    fullAddress: "123 Green Street, Eco District, NY 10001",
+    fullAddress: "Böllinger 27, 74078 Heilbronn",
     phone: "+1 (555) 123-4567",
     email: "info@recyclecenter.com",
     website: "www.recyclecenter.com",

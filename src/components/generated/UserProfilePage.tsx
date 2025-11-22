@@ -149,12 +149,12 @@ export const UserProfilePage = ({
 
   // Mock user data
   const userData = {
-    name: 'Djaniny Rodriguez',
-    email: 'djaniny@ecorecycle.com',
-    phone: '+1 (555) 123-4567',
+    name: 'Markus Müller',
+    email: 'marcus@ecorecycle.com',
+    phone: '+49 (555) 123-4567',
     avatar: '👤',
     joinDate: '2023-06-15',
-    location: '123 Eco Street, Green District'
+    location: 'Max-Planck-Str. 14, 74172 Neckarsulm'
   };
 
   // Calculate stats

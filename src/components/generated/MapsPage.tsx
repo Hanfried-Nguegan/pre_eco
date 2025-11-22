@@ -1,11 +1,13 @@
 "use client";
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Home, MapPin, ScanLine, ShoppingBag, User, Search, SlidersHorizontal, Navigation, Info } from 'lucide-react';
 import { cn } from '../../lib/utils';
 import { RecyclingCenterDetailModal } from './RecyclingCenterDetailModal';
 import { NavigationWaypoint } from './NavigationWaypoint';
+
+
 type NavItem = {
   id: string;
   label: string;
@@ -46,42 +48,42 @@ const recyclingFilters: RecyclingType[] = ['PLASTIC', 'GLASS', 'PAPER', 'CLOTHES
 // Mock recycling center data
 const recyclingCenters: MarkerData[] = [{
   id: '1',
-  name: 'Receiving recyclables',
+  name: 'Amorbach Recycling Center',
   distance: '550m',
   lat: 40.7489,
   lng: -73.9680,
-  type: ['PLASTIC', 'GLASS', 'PAPER']
+  type: ['PLASTIC', 'GLASS', 'PAPER'],
 }, {
   id: '2',
-  name: 'Green Recycling Hub',
+  name: 'Recyclingzentrum Südstraße',
   distance: '820m',
   lat: 40.7510,
   lng: -73.9705,
   type: ['PLASTIC', 'CLOTHES']
 }, {
   id: '3',
-  name: 'Eco Collection Point',
+  name: 'heilbronn Nord Recyclingzentrum',
   distance: '1.2km',
   lat: 40.7470,
   lng: -73.9655,
   type: ['GLASS', 'PAPER']
 }, {
   id: '4',
-  name: 'Urban Recycling Center',
+  name: 'Neckarsulm Recyclingzentrum',
   distance: '650m',
   lat: 40.7495,
   lng: -73.9720,
   type: ['PLASTIC', 'GLASS', 'PAPER', 'CLOTHES']
 }, {
   id: '5',
-  name: 'Community Recycling',
+  name: 'Weinsberg Recycling Hub',
   distance: '900m',
   lat: 40.7505,
   lng: -73.9660,
   type: ['CLOTHES', 'PAPER']
 }, {
   id: '6',
-  name: 'City Waste Management',
+  name: 'Sontheim Waste Management',
   distance: '1.5km',
   lat: 40.7520,
   lng: -73.9690,
@@ -106,6 +108,15 @@ export const MapsPage = ({
   const [isNavigating, setIsNavigating] = useState(false);
   const [navigationDestination, setNavigationDestination] = useState<MarkerData | null>(null);
   const mapRef = useRef<HTMLDivElement>(null);
+
+  const markerPositions = useMemo(() => {
+    return recyclingCenters.map(marker => ({
+      id: marker.id,
+      x: 15 + Math.random() * 70,
+      y: 15 + Math.random() * 70
+    }));
+  }, []);
+
   const toggleFilter = (filter: RecyclingType) => {
     setActiveFilters(prev => prev.includes(filter) ? prev.filter(f => f !== filter) : [...prev, filter]);
   };
@@ -155,9 +166,7 @@ export const MapsPage = ({
 
           {/* Markers */}
           {filteredMarkers.map((marker, index) => {
-          // Random positioning for scattered effect
-          const randomX = 15 + Math.random() * 70;
-          const randomY = 15 + Math.random() * 70;
+          const position = markerPositions.find(p => p.id === marker.id);
           return <motion.button key={marker.id} initial={{
             scale: 0,
             opacity: 0
@@ -173,8 +182,8 @@ export const MapsPage = ({
             stiffness: 300,
             damping: 20
           }} onClick={() => handleMarkerClick(marker)} className="absolute cursor-pointer hover:z-10 group" style={{
-            left: `${randomX}%`,
-            top: `${randomY}%`,
+            left: `${position?.x}%`,
+            top: `${position?.y}%`,
             transform: 'translate(-50%, -50%)'
           }}>
                 {/* Pulse animation */}

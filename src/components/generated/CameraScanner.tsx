@@ -21,7 +21,6 @@ export interface ScannedItem {
   category: string;
 }
 
-// Mock scanned data - in production this would come from QR code scanning
 const mockScannedData: ScannedItem[] = [{
   id: '1',
   name: 'High Density Polyethylene',
@@ -378,7 +377,7 @@ export const CameraScanner = ({
                   <button onClick={handleRescan} className="flex-1 py-4 rounded-[2rem] font-semibold text-base bg-zinc-100 text-zinc-700 hover:bg-zinc-200 transition-all">
                     Scan Another
                   </button>
-                  <button onClick={handleAddToOrder} className="flex-1 py-4 rounded-[2rem] font-semibold text-base bg-gradient-to-r from-[#005C4B] to-[#DDF247] text-white hover:shadow-xl transition-all">
+                  <button onClick={handleAddToOrder} className="flex-1 py-4 rounded-[2rem] font-semibold text-base bg-[#DDF247] text-black hover:shadow-xl transition-all">
                     ADD TO RECYCLE ORDER
                   </button>
                 </div>

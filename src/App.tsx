@@ -13,7 +13,6 @@ import { ListingUploadPage } from './components/generated/ListingUploadPage';
 import { UserProfilePage } from './components/generated/UserProfilePage';
 
 let theme: Theme = 'light';
-// only use 'centered' container for standalone components, never for full page apps or websites.
 let container: Container = 'centered';
 
 function App() {
@@ -31,7 +30,6 @@ function App() {
   setTheme(theme);
 
   const generatedComponent = useMemo(() => {
-    // THIS IS WHERE THE TOP LEVEL GENRATED COMPONENT WILL BE RETURNED!
     if (currentPage === 'schedule') {
       return <SchedulePickup onBack={() => setCurrentPage('home')} />;
     }
@@ -108,7 +106,7 @@ function App() {
       onNavigateToListing={() => setCurrentPage('listing')}
       onNavigateToCart={() => setCurrentPage('cart')}
       onNavigateToProfile={() => setCurrentPage('profile')}
-    />; // %EXPORT_STATEMENT%
+    />;
   }, [currentPage, cartItems]);
 
   if (container === 'centered') {
