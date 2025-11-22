@@ -393,7 +393,7 @@ export const CartPage = ({
         }} data-magicpath-id="96" data-magicpath-path="CartPage.tsx" />
             
             <span className="relative z-10 flex items-center gap-3" data-magicpath-id="97" data-magicpath-path="CartPage.tsx">
-              Proceed to Checkout
+              Continue to Checkout
               <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" data-magicpath-id="98" data-magicpath-path="CartPage.tsx" />
             </span>
           </motion.button>
