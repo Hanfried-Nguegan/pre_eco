@@ -160,7 +160,7 @@ export const BottomNavbar = ({
                    <div className="absolute inset-0 bg-zinc-200 animate-pulse" data-magicpath-id="64" data-magicpath-path="BottomNavbar.tsx" />
                    <img src={`https://picsum.photos/seed/${i + 50}/400/300`} alt="Activity" className="w-full h-full object-cover opacity-90" data-magicpath-id="65" data-magicpath-path="BottomNavbar.tsx" />
                    <div className="absolute top-6 left-0 bg-white py-2 px-6 rounded-r-full shadow-sm" data-magicpath-id="66" data-magicpath-path="BottomNavbar.tsx">
-                      <span className="font-medium text-zinc-800" data-magicpath-id="67" data-magicpath-path="BottomNavbar.tsx">Bring your own</span>
+                      <span className="font-medium text-zinc-800" data-magicpath-id="67" data-magicpath-path="BottomNavbar.tsx">Become a volunteer<br /></span>
                    </div>
                 </div>)}
            </div>
