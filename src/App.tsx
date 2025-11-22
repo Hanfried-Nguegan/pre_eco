@@ -7,13 +7,14 @@ import { CameraScanner } from './components/generated/CameraScanner';
 import { RecycleOrder } from './components/generated/RecycleOrder';
 import { DonationsPage } from './components/generated/DonationsPage';
 import { ShopPage } from './components/generated/ShopPage';
+import { CartPage } from './components/generated/CartPage';
 
 let theme: Theme = 'light';
 // only use 'centered' container for standalone components, never for full page apps or websites.
 let container: Container = 'centered';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'schedule' | 'map' | 'scan' | 'recycle' | 'donations' | 'shop'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'schedule' | 'map' | 'scan' | 'recycle' | 'donations' | 'shop' | 'cart'>('home');
 
   function setTheme(theme: Theme) {
     if (theme === 'dark') {
@@ -43,7 +44,10 @@ function App() {
       return <DonationsPage onNavigateToHome={() => setCurrentPage('home')} />;
     }
     if (currentPage === 'shop') {
-      return <ShopPage onNavigateToHome={() => setCurrentPage('home')} onNavigateToMap={() => setCurrentPage('map')} />;
+      return <ShopPage onNavigateToHome={() => setCurrentPage('home')} onNavigateToMap={() => setCurrentPage('map')} onNavigateToCart={() => setCurrentPage('cart')} />;
+    }
+    if (currentPage === 'cart') {
+      return <CartPage onBack={() => setCurrentPage('shop')} onContinueShopping={() => setCurrentPage('shop')} />;
     }
     return <BottomNavbar 
       onNavigateToSchedule={() => setCurrentPage('schedule')}
