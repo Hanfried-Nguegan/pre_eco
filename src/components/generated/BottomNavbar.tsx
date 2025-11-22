@@ -34,12 +34,14 @@ export const BottomNavbar = ({
   onNavigateToSchedule,
   onNavigateToMap,
   onNavigateToScan,
-  onNavigateToDonations
+  onNavigateToDonations,
+  onNavigateToShop
 }: {
   onNavigateToSchedule?: () => void;
   onNavigateToMap?: () => void;
   onNavigateToScan?: () => void;
   onNavigateToDonations?: () => void;
+  onNavigateToShop?: () => void;
 }) => {
   const [activeTab, setActiveTab] = useState('home');
 
@@ -181,6 +183,9 @@ export const BottomNavbar = ({
             }
             if (item.id === 'scan' && onNavigateToScan) {
               onNavigateToScan();
+            }
+            if (item.id === 'shop' && onNavigateToShop) {
+              onNavigateToShop();
             }
           }} className={cn("relative flex items-center justify-center rounded-[2rem] transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] cursor-pointer -webkit-tap-highlight-color-transparent outline-none", isActive ? "flex-grow px-6 py-3 bg-[#2A1805]" : "w-12 h-12 hover:bg-zinc-100")} layout transition={{
             type: "spring",
