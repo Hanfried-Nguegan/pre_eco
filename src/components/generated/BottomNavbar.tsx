@@ -30,7 +30,11 @@ const navItems: NavItem[] = [{
 }];
 
 // @component: BottomNavbar
-export const BottomNavbar = () => {
+export const BottomNavbar = ({
+  onNavigateToSchedule
+}: {
+  onNavigateToSchedule?: () => void;
+}) => {
   const [activeTab, setActiveTab] = useState('home');
 
   // @return
@@ -70,7 +74,7 @@ export const BottomNavbar = () => {
         {/* Grid Layout */}
         <div className="grid grid-cols-2 gap-4" data-magicpath-id="20" data-magicpath-path="BottomNavbar.tsx">
           {/* Courier Card */}
-          <div className="bg-[#E0E0FF] rounded-[2.5rem] p-6 aspect-[4/5] flex flex-col justify-between relative overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02]" data-magicpath-id="21" data-magicpath-path="BottomNavbar.tsx">
+          <div onClick={onNavigateToSchedule} className="bg-[#E0E0FF] rounded-[2.5rem] p-6 aspect-[4/5] flex flex-col justify-between relative overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02]" data-magicpath-id="21" data-magicpath-path="BottomNavbar.tsx">
              <div className="relative z-10" data-magicpath-id="22" data-magicpath-path="BottomNavbar.tsx">
                 <h3 className="text-lg font-semibold text-[#1a1a3a] leading-tight" data-magicpath-id="23" data-magicpath-path="BottomNavbar.tsx">Order a courier<br data-magicpath-id="24" data-magicpath-path="BottomNavbar.tsx" />to your home</h3>
              </div>
