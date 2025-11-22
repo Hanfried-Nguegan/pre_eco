@@ -7,7 +7,7 @@ import { CameraScanner } from './components/generated/CameraScanner';
 import { RecycleOrder } from './components/generated/RecycleOrder';
 import { DonationsPage } from './components/generated/DonationsPage';
 import { ShopPage } from './components/generated/ShopPage';
-import { CartPage } from './components/generated/CartPage';
+import { CartPage, CartItem } from './components/generated/CartPage';
 import { ListingUploadPage } from './components/generated/ListingUploadPage';
 
 let theme: Theme = 'light';
@@ -16,6 +16,7 @@ let container: Container = 'centered';
 
 function App() {
   const [currentPage, setCurrentPage] = useState<'home' | 'schedule' | 'map' | 'scan' | 'recycle' | 'donations' | 'shop' | 'cart' | 'listing'>('home');
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   function setTheme(theme: Theme) {
     if (theme === 'dark') {
@@ -45,10 +46,21 @@ function App() {
       return <DonationsPage onNavigateToHome={() => setCurrentPage('home')} />;
     }
     if (currentPage === 'shop') {
-      return <ShopPage onNavigateToHome={() => setCurrentPage('home')} onNavigateToMap={() => setCurrentPage('map')} onNavigateToCart={() => setCurrentPage('cart')} />;
+      return <ShopPage 
+        onNavigateToHome={() => setCurrentPage('home')} 
+        onNavigateToMap={() => setCurrentPage('map')} 
+        onNavigateToCart={() => setCurrentPage('cart')}
+        cartItems={cartItems}
+        onUpdateCart={setCartItems}
+      />;
     }
     if (currentPage === 'cart') {
-      return <CartPage onBack={() => setCurrentPage('shop')} onContinueShopping={() => setCurrentPage('shop')} />;
+      return <CartPage 
+        cartItems={cartItems}
+        onBack={() => setCurrentPage('shop')} 
+        onContinueShopping={() => setCurrentPage('shop')}
+        onUpdateCart={setCartItems}
+      />;
     }
     if (currentPage === 'listing') {
       return <ListingUploadPage onBack={() => setCurrentPage('home')} onComplete={() => setCurrentPage('home')} />;
@@ -60,8 +72,9 @@ function App() {
       onNavigateToDonations={() => setCurrentPage('donations')}
       onNavigateToShop={() => setCurrentPage('shop')}
       onNavigateToListing={() => setCurrentPage('listing')}
+      onNavigateToCart={() => setCurrentPage('cart')}
     />; // %EXPORT_STATEMENT%
-  }, [currentPage]);
+  }, [currentPage, cartItems]);
 
   if (container === 'centered') {
     return (

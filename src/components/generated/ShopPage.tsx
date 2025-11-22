@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Home, MapPin, ScanLine, ShoppingBag, User, ChevronLeft, ShoppingCart, Minus, Plus, Package } from 'lucide-react';
 import { cn } from '../../lib/utils';
@@ -115,16 +115,64 @@ export interface ShopPageProps {
   onNavigateToHome?: () => void;
   onNavigateToMap?: () => void;
   onNavigateToCart?: () => void;
+  cartItems?: Array<{
+    id: string;
+    name: string;
+    price: number;
+    points: number;
+    image: string;
+    quantity: number;
+  }>;
+  onUpdateCart?: (items: Array<{
+    id: string;
+    name: string;
+    price: number;
+    points: number;
+    image: string;
+    quantity: number;
+  }>) => void;
 }
 export const ShopPage = ({
   onNavigateToHome,
   onNavigateToMap,
-  onNavigateToCart
+  onNavigateToCart,
+  cartItems = [],
+  onUpdateCart
 }: ShopPageProps = {}) => {
   const [activeTab, setActiveTab] = useState('shop');
   const [selectedCategory, setSelectedCategory] = useState<Category>('BACKPACKS');
   const [cart, setCart] = useState<Record<string, number>>({});
   const [rewardPoints] = useState(2160);
+
+  // Sync cart with cartItems prop on mount
+  useEffect(() => {
+    if (cartItems.length > 0) {
+      const cartMap: Record<string, number> = {};
+      cartItems.forEach(item => {
+        cartMap[item.id] = item.quantity;
+      });
+      setCart(cartMap);
+    }
+  }, []);
+
+  // Update parent cart when local cart changes
+  useEffect(() => {
+    if (onUpdateCart) {
+      const items = Object.entries(cart).map(([productId, quantity]) => {
+        const product = products.find(p => p.id === productId);
+        if (!product) return null;
+        return {
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          points: product.points,
+          image: product.image,
+          quantity
+        };
+      }).filter((item): item is NonNullable<typeof item> => item !== null);
+      onUpdateCart(items);
+    }
+  }, [cart, onUpdateCart]);
   const filteredProducts = products.filter(product => product.category === selectedCategory);
   const cartItemCount = Object.values(cart).reduce((sum, qty) => sum + qty, 0);
   const addToCart = (productId: string) => {

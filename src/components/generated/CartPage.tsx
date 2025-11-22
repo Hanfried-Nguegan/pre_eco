@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, Minus, Plus, Trash2, Tag, ShoppingBag, Sparkles, ArrowRight, Package } from 'lucide-react';
 import { cn } from '../../lib/utils';
@@ -17,12 +17,14 @@ export interface CartPageProps {
   onCheckout?: (items: CartItem[], total: number, totalPoints: number) => void;
   onBack?: () => void;
   onContinueShopping?: () => void;
+  onUpdateCart?: (items: CartItem[]) => void;
 }
 export const CartPage = ({
   cartItems = [],
   onCheckout,
   onBack,
-  onContinueShopping
+  onContinueShopping,
+  onUpdateCart
 }: CartPageProps) => {
   const [items, setItems] = useState<CartItem[]>(cartItems);
   const [promoCode, setPromoCode] = useState('');
@@ -31,6 +33,13 @@ export const CartPage = ({
     discount: number;
   } | null>(null);
   const [showPromoInput, setShowPromoInput] = useState(false);
+
+  // Sync items with parent when they change
+  useEffect(() => {
+    if (onUpdateCart) {
+      onUpdateCart(items);
+    }
+  }, [items, onUpdateCart]);
 
   // Calculate totals
   const subtotal = useMemo(() => {
