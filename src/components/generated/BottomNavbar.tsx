@@ -35,13 +35,15 @@ export const BottomNavbar = ({
   onNavigateToMap,
   onNavigateToScan,
   onNavigateToDonations,
-  onNavigateToShop
+  onNavigateToShop,
+  onNavigateToListing
 }: {
   onNavigateToSchedule?: () => void;
   onNavigateToMap?: () => void;
   onNavigateToScan?: () => void;
   onNavigateToDonations?: () => void;
   onNavigateToShop?: () => void;
+  onNavigateToListing?: () => void;
 }) => {
   const [activeTab, setActiveTab] = useState('home');
 
@@ -160,7 +162,7 @@ export const BottomNavbar = ({
         <div className="pt-4" data-magicpath-id="60" data-magicpath-path="BottomNavbar.tsx">
            <h2 className="text-sm font-bold text-zinc-500 tracking-wider uppercase mb-4" data-magicpath-id="61" data-magicpath-path="BottomNavbar.tsx">Activities</h2>
            <div className="flex overflow-x-auto gap-4 pb-4 -mx-6 px-6 scrollbar-hide" data-magicpath-id="62" data-magicpath-path="BottomNavbar.tsx">
-              {[1, 2].map(i => <div key={i} onClick={i === 1 ? onNavigateToDonations : undefined} className={cn("min-w-[280px] h-48 bg-white rounded-[2rem] overflow-hidden relative shadow-sm", i === 1 && "cursor-pointer transition-transform hover:scale-[1.02]")} data-magicpath-id="63" data-magicpath-path="BottomNavbar.tsx">
+              {[1, 2].map(i => <div key={i} onClick={i === 1 ? onNavigateToDonations : i === 2 ? onNavigateToListing : undefined} className={cn("min-w-[280px] h-48 bg-white rounded-[2rem] overflow-hidden relative shadow-sm", (i === 1 || i === 2) && "cursor-pointer transition-transform hover:scale-[1.02]")} data-magicpath-id="63" data-magicpath-path="BottomNavbar.tsx">
                    <div className="absolute inset-0 bg-zinc-200 animate-pulse" data-magicpath-id="64" data-magicpath-path="BottomNavbar.tsx" />
                    <img src={`https://picsum.photos/seed/${i + 50}/400/300`} alt="Activity" className="w-full h-full object-cover opacity-90" data-magicpath-id="65" data-magicpath-path="BottomNavbar.tsx" />
                    <div className="absolute top-6 left-0 bg-white py-2 px-6 rounded-r-full shadow-sm" data-magicpath-id="66" data-magicpath-path="BottomNavbar.tsx">

@@ -8,13 +8,14 @@ import { RecycleOrder } from './components/generated/RecycleOrder';
 import { DonationsPage } from './components/generated/DonationsPage';
 import { ShopPage } from './components/generated/ShopPage';
 import { CartPage } from './components/generated/CartPage';
+import { ListingUploadPage } from './components/generated/ListingUploadPage';
 
 let theme: Theme = 'light';
 // only use 'centered' container for standalone components, never for full page apps or websites.
 let container: Container = 'centered';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'schedule' | 'map' | 'scan' | 'recycle' | 'donations' | 'shop' | 'cart'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'schedule' | 'map' | 'scan' | 'recycle' | 'donations' | 'shop' | 'cart' | 'listing'>('home');
 
   function setTheme(theme: Theme) {
     if (theme === 'dark') {
@@ -49,12 +50,16 @@ function App() {
     if (currentPage === 'cart') {
       return <CartPage onBack={() => setCurrentPage('shop')} onContinueShopping={() => setCurrentPage('shop')} />;
     }
+    if (currentPage === 'listing') {
+      return <ListingUploadPage onBack={() => setCurrentPage('home')} onComplete={() => setCurrentPage('home')} />;
+    }
     return <BottomNavbar 
       onNavigateToSchedule={() => setCurrentPage('schedule')}
       onNavigateToMap={() => setCurrentPage('map')}
       onNavigateToScan={() => setCurrentPage('scan')}
       onNavigateToDonations={() => setCurrentPage('donations')}
       onNavigateToShop={() => setCurrentPage('shop')}
+      onNavigateToListing={() => setCurrentPage('listing')}
     />; // %EXPORT_STATEMENT%
   }, [currentPage]);
 
