@@ -31,9 +31,11 @@ const navItems: NavItem[] = [{
 
 // @component: BottomNavbar
 export const BottomNavbar = ({
-  onNavigateToSchedule
+  onNavigateToSchedule,
+  onNavigateToMap
 }: {
   onNavigateToSchedule?: () => void;
+  onNavigateToMap?: () => void;
 }) => {
   const [activeTab, setActiveTab] = useState('home');
 
@@ -168,7 +170,12 @@ export const BottomNavbar = ({
         <nav className="bg-white p-2.5 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.12)] flex items-center gap-2 pointer-events-auto max-w-md w-full justify-between" data-magicpath-id="69" data-magicpath-path="BottomNavbar.tsx">
           {navItems.map(item => {
           const isActive = activeTab === item.id;
-          return <motion.button key={item.id} onClick={() => setActiveTab(item.id)} className={cn("relative flex items-center justify-center rounded-[2rem] transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] cursor-pointer -webkit-tap-highlight-color-transparent outline-none", isActive ? "flex-grow px-6 py-3 bg-[#2A1805]" : "w-12 h-12 hover:bg-zinc-100")} layout transition={{
+          return <motion.button key={item.id} onClick={() => {
+            setActiveTab(item.id);
+            if (item.id === 'map' && onNavigateToMap) {
+              onNavigateToMap();
+            }
+          }} className={cn("relative flex items-center justify-center rounded-[2rem] transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] cursor-pointer -webkit-tap-highlight-color-transparent outline-none", isActive ? "flex-grow px-6 py-3 bg-[#2A1805]" : "w-12 h-12 hover:bg-zinc-100")} layout transition={{
             type: "spring",
             stiffness: 500,
             damping: 35

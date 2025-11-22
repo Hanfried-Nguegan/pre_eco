@@ -2,13 +2,14 @@ import { useMemo, useState } from 'react';
 import { Container, Theme } from './settings/types';
 import { BottomNavbar } from './components/generated/BottomNavbar';
 import { SchedulePickup } from './components/generated/SchedulePickup';
+import { MapsPage } from './components/generated/MapsPage';
 
 let theme: Theme = 'light';
 // only use 'centered' container for standalone components, never for full page apps or websites.
 let container: Container = 'centered';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'schedule'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'schedule' | 'map'>('home');
 
   function setTheme(theme: Theme) {
     if (theme === 'dark') {
@@ -25,7 +26,13 @@ function App() {
     if (currentPage === 'schedule') {
       return <SchedulePickup onBack={() => setCurrentPage('home')} />;
     }
-    return <BottomNavbar onNavigateToSchedule={() => setCurrentPage('schedule')} />; // %EXPORT_STATEMENT%
+    if (currentPage === 'map') {
+      return <MapsPage onNavigateToHome={() => setCurrentPage('home')} />;
+    }
+    return <BottomNavbar 
+      onNavigateToSchedule={() => setCurrentPage('schedule')}
+      onNavigateToMap={() => setCurrentPage('map')}
+    />; // %EXPORT_STATEMENT%
   }, [currentPage]);
 
   if (container === 'centered') {
