@@ -5,13 +5,14 @@ import { SchedulePickup } from './components/generated/SchedulePickup';
 import { MapsPage } from './components/generated/MapsPage';
 import { CameraScanner } from './components/generated/CameraScanner';
 import { RecycleOrder } from './components/generated/RecycleOrder';
+import { DonationsPage } from './components/generated/DonationsPage';
 
 let theme: Theme = 'light';
 // only use 'centered' container for standalone components, never for full page apps or websites.
 let container: Container = 'centered';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'schedule' | 'map' | 'scan' | 'recycle'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'schedule' | 'map' | 'scan' | 'recycle' | 'donations'>('home');
 
   function setTheme(theme: Theme) {
     if (theme === 'dark') {
@@ -37,10 +38,14 @@ function App() {
     if (currentPage === 'recycle') {
       return <RecycleOrder onBack={() => setCurrentPage('home')} />;
     }
+    if (currentPage === 'donations') {
+      return <DonationsPage onNavigateToHome={() => setCurrentPage('home')} />;
+    }
     return <BottomNavbar 
       onNavigateToSchedule={() => setCurrentPage('schedule')}
       onNavigateToMap={() => setCurrentPage('map')}
       onNavigateToScan={() => setCurrentPage('scan')}
+      onNavigateToDonations={() => setCurrentPage('donations')}
     />; // %EXPORT_STATEMENT%
   }, [currentPage]);
 
