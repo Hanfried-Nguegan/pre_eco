@@ -7,6 +7,7 @@ import { cn } from '../../lib/utils';
 export interface CameraScannerProps {
   onBack?: () => void;
   onItemScanned?: (item: ScannedItem) => void;
+  onNavigateToRecycleOrder?: () => void;
 }
 export interface ScannedItem {
   id: string;
@@ -54,7 +55,8 @@ const mockScannedData: ScannedItem[] = [{
 }];
 export const CameraScanner = ({
   onBack,
-  onItemScanned
+  onItemScanned,
+  onNavigateToRecycleOrder
 }: CameraScannerProps) => {
   const [isScanning, setIsScanning] = useState(true);
   const [scannedItem, setScannedItem] = useState<ScannedItem | null>(null);
@@ -82,7 +84,7 @@ export const CameraScanner = ({
   const handleAddToOrder = () => {
     if (scannedItem) {
       onItemScanned?.(scannedItem);
-      // Navigation to RecycleOrder page is handled by App.tsx
+      onNavigateToRecycleOrder?.();
     }
   };
   const handleRescan = () => {

@@ -4,13 +4,14 @@ import { BottomNavbar } from './components/generated/BottomNavbar';
 import { SchedulePickup } from './components/generated/SchedulePickup';
 import { MapsPage } from './components/generated/MapsPage';
 import { CameraScanner } from './components/generated/CameraScanner';
+import { RecycleOrder } from './components/generated/RecycleOrder';
 
 let theme: Theme = 'light';
 // only use 'centered' container for standalone components, never for full page apps or websites.
 let container: Container = 'centered';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'schedule' | 'map' | 'scan'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'schedule' | 'map' | 'scan' | 'recycle'>('home');
 
   function setTheme(theme: Theme) {
     if (theme === 'dark') {
@@ -31,7 +32,10 @@ function App() {
       return <MapsPage onNavigateToHome={() => setCurrentPage('home')} />;
     }
     if (currentPage === 'scan') {
-      return <CameraScanner onBack={() => setCurrentPage('home')} />;
+      return <CameraScanner onBack={() => setCurrentPage('home')} onNavigateToRecycleOrder={() => setCurrentPage('recycle')} />;
+    }
+    if (currentPage === 'recycle') {
+      return <RecycleOrder onBack={() => setCurrentPage('home')} />;
     }
     return <BottomNavbar 
       onNavigateToSchedule={() => setCurrentPage('schedule')}
