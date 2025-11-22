@@ -8,6 +8,7 @@ import { RecycleOrder } from './components/generated/RecycleOrder';
 import { DonationsPage } from './components/generated/DonationsPage';
 import { ShopPage } from './components/generated/ShopPage';
 import { CartPage, CartItem } from './components/generated/CartPage';
+import { CheckoutPage } from './components/generated/CheckoutPage';
 import { ListingUploadPage } from './components/generated/ListingUploadPage';
 
 let theme: Theme = 'light';
@@ -15,7 +16,7 @@ let theme: Theme = 'light';
 let container: Container = 'centered';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'schedule' | 'map' | 'scan' | 'recycle' | 'donations' | 'shop' | 'cart' | 'listing'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'schedule' | 'map' | 'scan' | 'recycle' | 'donations' | 'shop' | 'cart' | 'checkout' | 'listing'>('home');
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   function setTheme(theme: Theme) {
@@ -60,6 +61,17 @@ function App() {
         onBack={() => setCurrentPage('shop')} 
         onContinueShopping={() => setCurrentPage('shop')}
         onUpdateCart={setCartItems}
+        onCheckout={() => setCurrentPage('checkout')}
+      />;
+    }
+    if (currentPage === 'checkout') {
+      return <CheckoutPage 
+        cartItems={cartItems}
+        onBack={() => setCurrentPage('cart')}
+        onPaymentComplete={() => {
+          setCartItems([]);
+          setCurrentPage('home');
+        }}
       />;
     }
     if (currentPage === 'listing') {
