@@ -3,13 +3,14 @@ import { Container, Theme } from './settings/types';
 import { BottomNavbar } from './components/generated/BottomNavbar';
 import { SchedulePickup } from './components/generated/SchedulePickup';
 import { MapsPage } from './components/generated/MapsPage';
+import { CameraScanner } from './components/generated/CameraScanner';
 
 let theme: Theme = 'light';
 // only use 'centered' container for standalone components, never for full page apps or websites.
 let container: Container = 'centered';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'schedule' | 'map'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'schedule' | 'map' | 'scan'>('home');
 
   function setTheme(theme: Theme) {
     if (theme === 'dark') {
@@ -29,9 +30,13 @@ function App() {
     if (currentPage === 'map') {
       return <MapsPage onNavigateToHome={() => setCurrentPage('home')} />;
     }
+    if (currentPage === 'scan') {
+      return <CameraScanner onBack={() => setCurrentPage('home')} />;
+    }
     return <BottomNavbar 
       onNavigateToSchedule={() => setCurrentPage('schedule')}
       onNavigateToMap={() => setCurrentPage('map')}
+      onNavigateToScan={() => setCurrentPage('scan')}
     />; // %EXPORT_STATEMENT%
   }, [currentPage]);
 
