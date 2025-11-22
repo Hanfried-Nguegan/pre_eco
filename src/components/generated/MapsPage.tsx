@@ -88,9 +88,15 @@ const recyclingCenters: MarkerData[] = [{
   type: ['PLASTIC', 'GLASS']
 }];
 export const MapsPage = ({
-  onNavigateToHome
+  onNavigateToHome,
+  onNavigateToScan,
+  onNavigateToShop,
+  onNavigateToProfile
 }: {
   onNavigateToHome?: () => void;
+  onNavigateToScan?: () => void;
+  onNavigateToShop?: () => void;
+  onNavigateToProfile?: () => void;
 } = {}) => {
   const [activeTab, setActiveTab] = useState('map');
   const [activeFilters, setActiveFilters] = useState<RecyclingType[]>([]);
@@ -299,6 +305,15 @@ export const MapsPage = ({
             setActiveTab(item.id);
             if (item.id === 'home' && onNavigateToHome) {
               onNavigateToHome();
+            }
+            if (item.id === 'scan' && onNavigateToScan) {
+              onNavigateToScan();
+            }
+            if (item.id === 'shop' && onNavigateToShop) {
+              onNavigateToShop();
+            }
+            if (item.id === 'profile' && onNavigateToProfile) {
+              onNavigateToProfile();
             }
           }} className={cn("relative flex items-center justify-center rounded-[2rem] transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] cursor-pointer -webkit-tap-highlight-color-transparent outline-none", isActive ? "flex-grow px-6 py-3 bg-[#2A1805]" : "w-12 h-12 hover:bg-zinc-100")} layout transition={{
             type: "spring",

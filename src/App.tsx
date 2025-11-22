@@ -36,7 +36,12 @@ function App() {
       return <SchedulePickup onBack={() => setCurrentPage('home')} />;
     }
     if (currentPage === 'map') {
-      return <MapsPage onNavigateToHome={() => setCurrentPage('home')} />;
+      return <MapsPage 
+        onNavigateToHome={() => setCurrentPage('home')} 
+        onNavigateToScan={() => setCurrentPage('scan')}
+        onNavigateToShop={() => setCurrentPage('shop')}
+        onNavigateToProfile={() => setCurrentPage('profile')}
+      />;
     }
     if (currentPage === 'scan') {
       return <CameraScanner onBack={() => setCurrentPage('home')} onNavigateToRecycleOrder={() => setCurrentPage('recycle')} />;
@@ -45,13 +50,21 @@ function App() {
       return <RecycleOrder onBack={() => setCurrentPage('home')} />;
     }
     if (currentPage === 'donations') {
-      return <DonationsPage onNavigateToHome={() => setCurrentPage('home')} />;
+      return <DonationsPage 
+        onNavigateToHome={() => setCurrentPage('home')} 
+        onNavigateToMap={() => setCurrentPage('map')}
+        onNavigateToScan={() => setCurrentPage('scan')}
+        onNavigateToShop={() => setCurrentPage('shop')}
+        onNavigateToProfile={() => setCurrentPage('profile')}
+      />;
     }
     if (currentPage === 'shop') {
       return <ShopPage 
         onNavigateToHome={() => setCurrentPage('home')} 
         onNavigateToMap={() => setCurrentPage('map')} 
+        onNavigateToScan={() => setCurrentPage('scan')}
         onNavigateToCart={() => setCurrentPage('cart')}
+        onNavigateToProfile={() => setCurrentPage('profile')}
         cartItems={cartItems}
         onUpdateCart={setCartItems}
       />;
