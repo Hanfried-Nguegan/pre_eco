@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Home, MapPin, ScanLine, ShoppingBag, User, ShoppingCart } from 'lucide-react';
 import { cn } from '../../lib/utils';
+import Image from "next/image";
+
 type NavItem = {
   id: string;
   label: string;
@@ -75,14 +77,7 @@ export const BottomNavbar = ({
           </div>
           
           <div className="absolute right-[-20px] top-1/2 -translate-y-1/2 w-48 h-48 pointer-events-none">
-             <svg viewBox="0 0 200 200" className="w-full h-full drop-shadow-xl">
-               <path fill="#FFFFFF" d="M100 10c10 0 15 20 20 25s20-10 25-5 5 25 10 30 25 0 28 10-10 20-5 25 25 10 25 20-20 15-20 25 10 20 0 25-20 5-25 10-5 25-10 28-20-10-25-5-15 20-25 20-15-20-25-20 5-25-10-30-25 0-28-10 10-20 5-25-25-10-25-20 20-15 20-25-10-20 0-25 20-5 25-10 5-25 10-28 20 10 25 5Z" />
-               <circle cx="100" cy="100" r="25" fill="#FFD700" />
-               <path d="M90 95a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm20 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4z" fill="#2A1805" />
-               <path d="M95 105q5 5 10 0" stroke="#2A1805" strokeWidth="2" fill="none" />
-               <path d="M100 125 C 100 125, 80 160, 60 150" stroke="#005C4B" strokeWidth="15" strokeLinecap="round" fill="none" />
-               <path d="M100 125 C 100 125, 120 160, 140 150" stroke="#005C4B" strokeWidth="15" strokeLinecap="round" fill="none" />
-             </svg>
+            <img src = "/images/hugit.png" alt='CO2 Mascot' width={192} height={192} className="w-full h-full object-contain" />
           </div>
         </div>
 
@@ -92,40 +87,7 @@ export const BottomNavbar = ({
                 <h3 className="text-lg font-semibold text-[#1a1a3a] leading-tight">Order a courier<br />to your home</h3>
              </div>
              <div className="absolute bottom-0 right-0 w-45 h-45">
-                <svg viewBox="0 0 120 120" className="w-full h-full">
-                  <ellipse cx="35" cy="75" rx="8" ry="10" fill="#DDF247" />
-                  <rect x="30" y="65" width="45" height="20" rx="8" fill="#DDF247" />
-                  <ellipse cx="70" cy="75" rx="8" ry="10" fill="#DDF247" />
-                  
-                  <circle cx="35" cy="85" r="8" fill="#005C4B" />
-                  <circle cx="70" cy="85" r="8" fill="#005C4B" />
-                  
-                  <rect x="68" y="55" width="4" height="20" fill="#005C4B" rx="2" />
-                  
-                  <path d="M 45 70 Q 40 55 45 40 Q 48 35 52 38 Q 58 48 65 55 Q 68 58 70 62" stroke="#005C4B" strokeWidth="8" fill="none" strokeLinecap="round" />
-                  
-                  <path d="M 48 50 Q 42 48 38 52" stroke="#005C4B" strokeWidth="6" fill="none" strokeLinecap="round" />
-                  <path d="M 52 45 Q 60 42 68 50 L 72 56" stroke="#005C4B" strokeWidth="6" fill="none" strokeLinecap="round" />
-                  
-                  <circle cx="72" cy="56" r="4" fill="#005C4B" />
-                  
-                  <ellipse cx="35" cy="25" rx="6" ry="12" fill="white" transform="rotate(-30 45 30)" />
-                  <ellipse cx="40" cy="18" rx="6" ry="12" fill="white" transform="rotate(-10 45 30)" />
-                  <ellipse cx="50" cy="15" rx="6" ry="12" fill="white" transform="rotate(10 45 30)" />
-                  <ellipse cx="58" cy="18" rx="6" ry="12" fill="white" transform="rotate(30 45 30)" />
-                  <ellipse cx="60" cy="25" rx="6" ry="12" fill="white" transform="rotate(50 45 30)" />
-                  <ellipse cx="58" cy="35" rx="6" ry="12" fill="white" transform="rotate(70 45 30)" />
-                  <ellipse cx="50" cy="40" rx="6" ry="12" fill="white" transform="rotate(90 45 30)" />
-                  <ellipse cx="40" cy="38" rx="6" ry="12" fill="white" transform="rotate(110 45 30)" />
-                  
-                  <circle cx="47" cy="28" r="10" fill="#FFD700" />
-                  
-                  <ellipse cx="44" cy="27" rx="3" ry="2.5" fill="#1a1a3a" />
-                  <ellipse cx="50" cy="27" rx="3" ry="2.5" fill="#1a1a3a" />
-                  <line x1="47" y1="27" x2="47" y2="27" stroke="#1a1a3a" strokeWidth="1.5" />
-                  
-                  <path d="M 44 31 Q 47 33 50 31" stroke="#1a1a3a" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-                </svg>
+                <img src = "/images/flower illustration.png" alt='Courier Illustration' width={180} height={180} className="w-full h-full object-contain pointer-events-none" />
              </div>
           </div>
 
